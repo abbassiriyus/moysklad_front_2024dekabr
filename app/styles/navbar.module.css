@@ -1,0 +1,231 @@
+
+.navbar_body{
+   max-width: 1327px;
+   width: 90%;
+   margin: auto; 
+}
+.navbar_top{
+    display: grid;
+    grid-template-columns: 600px 1.2fr;
+    padding-top: 12px;
+}
+.navbar_top__items{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    align-items: center;
+    font-family: Arial;
+font-size: 14px;
+font-weight: 400;
+line-height: 16.1px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+height: 22px;
+
+}
+.navbar_top__items_second{
+    width: 100%;
+    align-items: center;
+    display: flex;
+    gap: 9px;
+    justify-content: flex-end;
+    font-family: Arial;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.1px;
+    text-align: center;
+    text-underline-position: from-font;
+    -webkit-text-decoration-skip-ink: none;
+    text-decoration-skip-ink: none;
+    height: 22px;cursor: pointer;
+
+}
+.navbar_top__item_bordered{
+    border: 1px solid #000000;
+    padding: 2px 22px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.navbar_top__item{
+    cursor: pointer;
+   
+}
+.navbar_top__items a{
+    text-decoration: none;
+    color: #000000;
+}
+.navbarlogo_img{
+    height: 132px;
+    width: auto;
+    cursor: pointer;
+}
+.navbar_bottom{
+    display: grid;
+    grid-template-columns: 600px auto;
+}
+.navbar__action{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 40px;
+    /* height: 100%; */
+    position: relative;
+    padding-top: 57px;
+}
+.menu__bar{
+    background-color: white;
+    width: 200px;
+    position: fixed;
+    top: 0px;
+    right: 120%;
+    display: none;
+}
+
+.navbar__action_item{
+    text-align: center;
+    font-family: Arial;
+font-size: 14px;
+font-weight: 400;
+line-height: 16.1px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+cursor: pointer;
+transition: 1s;
+
+}
+.navbar__action_item:hover{
+    scale: 1.03;
+}
+.navbarlogo{
+    display: flex;
+gap: 19px;
+padding-top: 39px;
+align-items: center;
+}
+.navbar__country{
+    font-family: Arial;
+font-size: 13px;
+cursor: pointer;
+font-weight: 700;
+line-height: 14.95px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
+}
+.navbar_location{
+    display: flex;
+    align-items: center;
+    gap: 1px;
+    transition: 1s;
+    cursor: pointer;
+}
+.navbar_location:hover{
+    scale: 1.03;
+}
+.search__icons{
+    transform: rotateY(180deg);
+color: #E91F25;
+font-size: 23px;
+margin: auto;
+cursor: pointer;
+}
+.navbar__filter{
+    display: grid;
+    margin-top: 23px;
+    grid-template-columns: 156px auto;
+}
+.navbar__filter__katalog{
+    background: #E91F25;
+height: 50px;
+display: flex;
+cursor: pointer;
+align-items: center;
+font-family: Arial;
+font-size: 16px;
+    gap: 9px;
+font-weight: 400;
+line-height: 16.1px;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+color: white;
+justify-content: center;
+}
+.navbar__filter__search{
+    display: grid;
+    grid-template-columns: 50px auto;
+    align-items: center;
+    background: #F3F4F6;
+text-align: center;
+
+}
+.navbar__filter__search input{
+    border: none;
+    background-color: #f3f4f600;
+    outline: none;
+    user-select: none;
+    height: 100%;
+    padding-left: 11px;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+.none__pk__toggle{
+    display: none;
+}
+@media (min-width:991px){
+    .navbarlogo_img{
+        margin-left: 43px;
+        margin-top: 26px;
+        height: 105px;
+    }
+}
+@media(max-width:991px){
+.navbar_top{
+    display: none;
+}
+.navbarlogo_img{
+    height: 65px;
+}
+.navbar_location{
+    display: none;
+}
+.navbar_bottom{
+    display: grid;
+    grid-template-columns: 200px auto;
+}
+.navbar__filter{
+    display: grid;
+    margin-top: 23px;
+    grid-template-columns: 40px auto;
+}
+.navbar__filter__katalog{
+    height: 40px;
+}
+.navbar__filter__katalog h5{
+    display: none;
+}
+#none__media{
+    display: none;
+}
+.none__pk__toggle{
+    display: block;
+
+}
+.karzinka__image{
+    height: 18px;
+    width: 24px;
+}
+.navbar__action{
+    gap: 15px
+}
+.menu__bar{
+    padding: 20px;
+    display: block;
+    transition: 2s;
+}
+}
+
