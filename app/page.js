@@ -10,7 +10,7 @@ import image_3 from "../app/image/image_3.png"
 import image_4_1 from "../app/image/image_4_1.png"
 import image_4_2_1 from "../app/image/image_4_2_1.png"
 import image_4_2_2 from "../app/image/image_4_2_2.png"
-
+import Sliderproduct from './components/sliderproduct';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -117,6 +117,57 @@ export default function page() {
   </div>
 </div>
 </div>
+<Sliderproduct  mapdata={[]} id={"topTovarId"} data={{title:'Top sotuvlar',
+      h1:'Eng mashhur mahsulotlar',
+      p:'Bizning mijozlarimiz tanlovi'
+      }}/>
+      <Sliderproduct  mapdata={[]} id={"topTovarId"} data={{title:'Eng yaxshi takliflar',
+      h1:'Foydali taklif',
+      p:'Ajoyib takliflar va maxsus narxlar haqida bilib oling. Faqat shu oy!'
+      }}/>
+      <Sliderproduct  mapdata={[]} id={"topTovarId"} data={{title:'Mashhur',
+      h1:"Birinchi bo'lib xarid qiling",
+      p:"Yuqori talabga ega bo'lgan yangi mahsulotlar"
+      }}/>
+
+
+<div className="barcha_homiylar">
+  <h2 className="barcha_homiylar_title">
+
+  </h2>
+  <Swiper
+          cssMode={true}
+          navigation={{
+            nextEl: '.swiper-button-next2',
+            prevEl: '.swiper-button-prev2',
+          }}
+          mousewheel={true}
+          keyboard={true}
+          slidesPerView={5} // Bu yerda 5 ta slayd ko'rsatiladi
+          spaceBetween={10} 
+          modules={[Navigation, Mousewheel, Keyboard]}
+          className="mySwiper"
+          onSwiper={(swiper) => { swiperRef.current = swiper; }}
+        >
+          {slideLabels.map((label, index) => (
+            <SwiperSlide  key={index}>
+              <Image src={} alt=""/>
+            </SwiperSlide>
+          ))}
+
+        </Swiper>
+        <div >
+
+          <div style={{ cursor: 'pointer', fontSize: "20px" }} className="swiper-button-prev2"
+          >
+            <FaArrowLeftLong /></div>
+          <div style={{ cursor: 'pointer', fontSize: "20px" }} className="swiper-button-next2" >
+            <FaArrowRightLong /></div>
+        </div>
+</div>
+
+asmdlkasmdkas
+asdsadakl
 
     </div>
 
