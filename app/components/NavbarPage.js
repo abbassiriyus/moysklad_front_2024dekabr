@@ -14,12 +14,23 @@ import { IoMenuSharp } from "react-icons/io5";
 import { useState } from "react";
 import { FaPhone } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
+import { MdArrowForwardIos } from "react-icons/md";
 export default function Navbar() {
 
     var [opentogle, setOpentoggle] = useState(false)
 
-
-
+var [page,setPage]=useState(false)
+var openpage=()=>{
+    console.log(page);
+    
+    if(page){
+        document.querySelector('#katalog_page').style='display:block'
+        setPage(false)
+    }else{
+        document.querySelector('#katalog_page').style='display:none'
+setPage(true)
+    }
+}
 
 
     return (
@@ -66,13 +77,13 @@ export default function Navbar() {
                         <IoMenuSharp onClick={() => setOpentoggle(true)} style={{ fontSize: "24px" }} />
                     </li>
                     <div style={opentogle ? { right: '0px' } : { right: '-120%' }} id="toollbr" className={s.menu__bar}>
-                        <div className={s.close__toggle} onClick={() => setOpentoggle(false)}><IoClose style={{fontSize:"18px"}} /></div>
+                        <div className={s.close__toggle} onClick={() => setOpentoggle(false)}><IoClose style={{ fontSize: "18px" }} /></div>
                         <ul className="toolbar__ul">
                             <li className={s.toolbar__li}>RadioCity Tashkiloti</li>
                             <li className={s.toolbar__li}>Yetkazib berish</li>
                             <li className={s.toolbar__li}>To`lovlar</li>
                             <li className={s.toolbar__li}><FaPhone />+ 998 94 545 2266</li>
-                            <li className={s.toolbar__li}><Image src={image_sum} alt=""/> Onlayn hisoblash</li>
+                            <li className={s.toolbar__li}><Image src={image_sum} alt="" /> Onlayn hisoblash</li>
 
                         </ul>
                     </div>
@@ -85,10 +96,69 @@ export default function Navbar() {
                 </div>
                 <div className={s.navbar__filter__search}>
                     <CiSearch className={s.search__icons} />
-                    <input type="text" placeholder='2 000 000 dan ortiq tavar bor' />
+                    <input onKeyUp={(e) => {
+                        if ((e.target.value).length > 0) {
+                            document.querySelector('#searchresult').style = "display:block"
+                        } else {
+                            document.querySelector('#searchresult').style = "display:none"
 
+                        }
+                    }} type="text" placeholder='2 000 000 dan ortiq tavar bor' />
+                    <div id="searchresult" className={s.searchResalt}>
+                        <ul>
+                            <li>To’lamlar</li>
+                            <li>To’k o’tkazgiz</li>
+                        </ul>
+                    </div>
                 </div>
-
+                <div id="katalog_page" onClick={()=>openpage()} className={s.katalogPage}>
+                    <div className={s.katalogPage__category}>
+                        <ul className={s.katalogPage__category__ul} >
+                            <li className={s.katalogPage__category__li}><p>Elektronika</p><MdArrowForwardIos /></li>
+                            <li className={s.katalogPage__category__li}><p>Kameralar</p><MdArrowForwardIos /></li>
+                            <li className={s.katalogPage__category__li}><p>Instrumentlar</p><MdArrowForwardIos /></li>
+                            <li className={s.katalogPage__category__li}><p>O’lchov  asboblari</p><MdArrowForwardIos /></li>
+                            <li className={s.katalogPage__category__li}><p>Santexnika</p><MdArrowForwardIos /></li>
+                            <li className={s.katalogPage__category__li}><p>Elektronika va texnikalar</p><MdArrowForwardIos /></li>
+                            <li className={s.katalogPage__category__li}><p>Elektronika</p><MdArrowForwardIos /></li>
+                            <li className={s.katalogPage__category__li}><p>Kameralar</p><MdArrowForwardIos /></li>
+                            <li className={s.katalogPage__category__li}><p>Instrumentlar</p><MdArrowForwardIos /></li>
+                            <li className={s.katalogPage__category__li}><p>O’lchov  asboblari</p><MdArrowForwardIos /></li>
+                            <li className={s.katalogPage__category__li}><p>Santexnika</p><MdArrowForwardIos /></li>
+                            <li className={s.katalogPage__category__li}><p>Elektronika va texnikalar</p><MdArrowForwardIos /></li>
+                        </ul>
+                        <div className={s.katalogPage__category__cards}>
+                            <div className={s.katalogPage__category__card}>
+                                <h4>Elektronika</h4>
+                                <p>Video kuchaytirgichlar</p>
+                                <p>HF kalitlari</p>
+                                <p>HF mikserlari</p>
+                                <p>RF kuchaytirgichlari</p>
+                            </div>
+                            <div className={s.katalogPage__category__card}>
+                                <h4>Elektronika</h4>
+                                <p>Video kuchaytirgichlar</p>
+                                <p>HF kalitlari</p>
+                                <p>HF mikserlari</p>
+                                <p>RF kuchaytirgichlari</p>
+                            </div>
+                            <div className={s.katalogPage__category__card}>
+                                <h4>Elektronika</h4>
+                                <p>Video kuchaytirgichlar</p>
+                                <p>HF kalitlari</p>
+                                <p>HF mikserlari</p>
+                                <p>RF kuchaytirgichlari</p>
+                            </div>
+                            <div className={s.katalogPage__category__card}>
+                                <h4>Elektronika</h4>
+                                <p>Video kuchaytirgichlar</p>
+                                <p>HF kalitlari</p>
+                                <p>HF mikserlari</p>
+                                <p>RF kuchaytirgichlari</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     )

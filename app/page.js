@@ -11,6 +11,14 @@ import image_4_1 from "../app/image/image_4_1.png"
 import image_4_2_1 from "../app/image/image_4_2_1.png"
 import image_4_2_2 from "../app/image/image_4_2_2.png"
 import Sliderproduct from './components/sliderproduct';
+import homiy_1 from "../app/image/homiy_1.png"
+import homiy_2 from "../app/image/homiy_2.png"
+import homiy_3 from "../app/image/homiy_3.png"
+import homiy_4 from "../app/image/homiy_4.png"
+import homiy_5 from "../app/image/homiy_5.png"
+import homiy_6 from "../app/image/homiy_6.png"
+
+
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -26,7 +34,8 @@ export default function page() {
   const swiperRef = useRef(null);
   const slideLabels = ['Yetkazib berish EAEI', 'Kabellar', 'Kontaktlar', 'Electronika', 'Kamera'];
   return (
-    <div><Navbar />
+    <div style={{marginBottom:'150px'}}>
+      <Navbar />
       <div className={s.carousel_panel}>
         <Swiper
           cssMode={true}
@@ -131,43 +140,39 @@ export default function page() {
       }}/>
 
 
-<div className="barcha_homiylar">
+<div className={s.barcha_homiylar}>
   <h2 className="barcha_homiylar_title">
 
   </h2>
   <Swiper
           cssMode={true}
           navigation={{
-            nextEl: '.swiper-button-next2',
-            prevEl: '.swiper-button-prev2',
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
           }}
-          mousewheel={true}
-          keyboard={true}
           slidesPerView={5} // Bu yerda 5 ta slayd ko'rsatiladi
-          spaceBetween={10} 
-          modules={[Navigation, Mousewheel, Keyboard]}
-          className="mySwiper"
-          onSwiper={(swiper) => { swiperRef.current = swiper; }}
+          modules={[Navigation]}
+          className="mySwiper1"
+         
         >
           {slideLabels.map((label, index) => (
             <SwiperSlide  key={index}>
-              <Image src={} alt=""/>
+              salom
             </SwiperSlide>
           ))}
+  <div className={s.button___swippwer} >
 
-        </Swiper>
-        <div >
-
-          <div style={{ cursor: 'pointer', fontSize: "20px" }} className="swiper-button-prev2"
+          <div style={{ cursor: 'pointer', fontSize: "20px" }} className="swiper-button-prev"
           >
             <FaArrowLeftLong /></div>
-          <div style={{ cursor: 'pointer', fontSize: "20px" }} className="swiper-button-next2" >
+          <div style={{ cursor: 'pointer', fontSize: "20px" }} className="swiper-button-next" >
             <FaArrowRightLong /></div>
         </div>
+        </Swiper>
+      
 </div>
 
-asmdlkasmdkas
-asdsadakl
+
 
     </div>
 

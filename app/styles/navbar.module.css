@@ -136,6 +136,7 @@ cursor: pointer;
 .navbar__filter{
     display: grid;
     margin-top: 23px;
+    position: relative;
     grid-template-columns: 156px auto;
 }
 .navbar__filter__katalog{
@@ -250,4 +251,106 @@ margin-top: 10px;
 margin-bottom: 10px;
 display: flex;align-items: center;
 gap: 5px;
+}
+.searchResalt{
+    position: absolute; 
+    text-align: left;
+    list-style: none;
+    width: 100%;
+    top: 100%;
+    background-color: white;
+    z-index: 23;
+    display: none;
+}
+.searchResalt ul{
+    list-style: none;
+    margin-left: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.searchResalt li{
+    margin-bottom: 5px;
+
+}
+.navbar__filter__search{
+    position: relative;
+   
+}
+.navbar__filter__katalog{
+    position: relative;
+}
+.katalogPage__category__ul{
+    background-color: white;
+    padding: 20px;
+}
+.katalogPage{
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    display: none;
+    width: 100%;
+    z-index: 123;
+}
+.katalogPage__category__li{
+    display: flex;
+    cursor: pointer;
+justify-content: space-between;
+list-style: none;
+width: 100%;
+margin-bottom: 10px;
+transition: 1s;
+}
+.katalogPage__category__li:hover{
+    scale: 1.01;
+}
+.katalogPage__category__li p{
+    font-family: Arial;
+font-size: 14px;
+font-weight: 400;
+line-height: 16.1px;
+letter-spacing: 0.1em;
+text-align: center;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
+}
+.katalogPage__category{
+    display: grid;
+    grid-template-columns: 250px auto;
+    background-color: white;
+    width: 100%;
+}
+.katalogPage__category__cards{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+}
+.katalogPage__category__card{
+    padding: 30px;
+}
+.katalogPage__category__cards h4{
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18.4px;
+    letter-spacing: 0.1em;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-bottom: 10px;
+    
+}
+.katalogPage__category__cards p{
+    font-family: Arial;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    font-weight: 400;
+    line-height: 16.1px;
+    transition: 1s;
+    letter-spacing: 0.1em;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;    
+}
+.katalogPage__category__cards p:hover{
+    scale: 1.01;
 }

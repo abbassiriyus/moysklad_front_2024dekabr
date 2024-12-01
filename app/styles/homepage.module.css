@@ -300,3 +300,9 @@ margin-left: 2%;
 scale: 1.1;
 height: auto !important;
 }
+.barcha_homiylar{
+    width: 90%;
+    max-width: 1327px;
+    margin: auto;
+    position: relative;
+}
