@@ -12,6 +12,7 @@ import { RiMapPin2Fill } from "react-icons/ri";
 import { CiSearch } from "react-icons/ci";
 import { IoMenuSharp } from "react-icons/io5";
 import { useState } from "react";
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 import { FaPhone } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 import { MdArrowForwardIos } from "react-icons/md";
@@ -19,19 +20,39 @@ export default function Navbar() {
 
     var [opentogle, setOpentoggle] = useState(false)
 
-var [page,setPage]=useState(false)
-var openpage=()=>{
-    console.log(page);
-    
-    if(page){
-        document.querySelector('#katalog_page').style='display:block'
-        setPage(false)
-    }else{
-        document.querySelector('#katalog_page').style='display:none'
-setPage(true)
-    }
-}
+    var [page, setPage] = useState(true)
+    var openpage = () => {
+        console.log(page);
 
+        if (page) {
+            document.querySelector('#katalog_page').style = 'display:block'
+            setPage(false)
+        } else {
+            document.querySelector('#katalog_page').style = 'display:none'
+            setPage(true)
+        }
+    }
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    const toggleAccordion = index => {
+        setActiveIndex(activeIndex === index ? null : index);
+    };
+
+    const items = [
+        { question: "Elektronika" },
+        { question: "Kameralar"},
+        { question: "Instrumentlar" },
+        { question: "O’lchov  asboblari" },
+        { question: "Santexnika" },
+        { question: "Elektronika va texnikalar" },
+        { question: "Elektronika" },
+        { question: "Kameralar" },
+        { question: "Instrumentlar" },
+        { question: "O’lchov  asboblari" },
+        { question: "Santexnika" },
+
+
+    ];
 
     return (
         <div className={s.navbar_body}>
@@ -90,7 +111,7 @@ setPage(true)
                 </ul>
             </div>
             <div className={s.navbar__filter}>
-                <div className={s.navbar__filter__katalog}>
+                <div onClick={() => openpage()} className={s.navbar__filter__katalog}>
                     <CgMenuGridR style={{ fontSize: "18px" }} />
                     <h5>Kataloglar</h5>
                 </div>
@@ -111,8 +132,32 @@ setPage(true)
                         </ul>
                     </div>
                 </div>
-                <div id="katalog_page" onClick={()=>openpage()} className={s.katalogPage}>
+                <div id="katalog_page" onMouseLeave={openpage} className={s.katalogPage}>
                     <div className={s.katalogPage__category}>
+
+                        <div className={s.accordion}>
+                            {items.map((item, index) => (
+                                <div className={s.accordionitem} key={index}>
+                                    <div className={s.accordionheader} onClick={() => toggleAccordion(index)}>
+                                        {item.question}
+                                        <span className={s.arrow}>
+                                            {activeIndex === index ? <FaChevronUp /> : <FaChevronDown />}
+                                        </span>
+                                    </div>
+                                    {activeIndex === index && (
+                                        <div className={s.accordioncontent}>
+                                             <p>Video kuchaytirgichlar</p>
+                            <p>HF kalitlari</p>
+                            <p>HF mikserlari</p>
+                            <p>RF kuchaytirgichlari</p>
+                            <p>Video kuchaytirgichlar</p>
+                            <p>HF kalitlari</p>
+                                        </div>
+                                    )}
+                                </div>
+                            ))}
+                        </div>
+
                         <ul className={s.katalogPage__category__ul} >
                             <li className={s.katalogPage__category__li}><p>Elektronika</p><MdArrowForwardIos /></li>
                             <li className={s.katalogPage__category__li}><p>Kameralar</p><MdArrowForwardIos /></li>
@@ -128,34 +173,23 @@ setPage(true)
                             <li className={s.katalogPage__category__li}><p>Elektronika va texnikalar</p><MdArrowForwardIos /></li>
                         </ul>
                         <div className={s.katalogPage__category__cards}>
-                            <div className={s.katalogPage__category__card}>
-                                <h4>Elektronika</h4>
-                                <p>Video kuchaytirgichlar</p>
-                                <p>HF kalitlari</p>
-                                <p>HF mikserlari</p>
-                                <p>RF kuchaytirgichlari</p>
-                            </div>
-                            <div className={s.katalogPage__category__card}>
-                                <h4>Elektronika</h4>
-                                <p>Video kuchaytirgichlar</p>
-                                <p>HF kalitlari</p>
-                                <p>HF mikserlari</p>
-                                <p>RF kuchaytirgichlari</p>
-                            </div>
-                            <div className={s.katalogPage__category__card}>
-                                <h4>Elektronika</h4>
-                                <p>Video kuchaytirgichlar</p>
-                                <p>HF kalitlari</p>
-                                <p>HF mikserlari</p>
-                                <p>RF kuchaytirgichlari</p>
-                            </div>
-                            <div className={s.katalogPage__category__card}>
-                                <h4>Elektronika</h4>
-                                <p>Video kuchaytirgichlar</p>
-                                <p>HF kalitlari</p>
-                                <p>HF mikserlari</p>
-                                <p>RF kuchaytirgichlari</p>
-                            </div>
+
+                            <p>Video kuchaytirgichlar</p>
+                            <p>HF kalitlari</p>
+                            <p>HF mikserlari</p>
+                            <p>RF kuchaytirgichlari</p>
+                            <p>Video kuchaytirgichlar</p>
+                            <p>HF kalitlari</p>
+                            <p>HF mikserlari</p>
+                            <p>RF kuchaytirgichlari</p>
+                            <p>Video kuchaytirgichlar</p>
+                            <p>HF kalitlari</p>
+                            <p>HF mikserlari</p>
+                            <p>RF kuchaytirgichlari</p>
+                            <p>Video kuchaytirgichlar</p>
+                            <p>HF kalitlari</p>
+                            <p>HF mikserlari</p>
+                            <p>RF kuchaytirgichlari</p>
                         </div>
                     </div>
                 </div>

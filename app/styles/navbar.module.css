@@ -80,6 +80,7 @@ height: 22px;
     position: fixed;
     top: 0px;
     right: 120%;
+    z-index: 123;
     display: none;
 }
 
@@ -287,6 +288,7 @@ gap: 5px;
     position: absolute;
     top: 100%;
     left: 0px;
+
     display: none;
     width: 100%;
     z-index: 123;
@@ -320,10 +322,18 @@ text-decoration-skip-ink: none;
     background-color: white;
     width: 100%;
 }
+.katalogPage:hover .katalogPage__category__cards{
+    display: flex;
+}
 .katalogPage__category__cards{
     display: flex;
+    flex-direction: column;
+    gap: 10px;
     flex-wrap: wrap;
+    display: none;
     max-width: 500px;
+    height: 300px;
+    margin-top: 30px;
 }
 .katalogPage__category__card{
     padding: 30px;
@@ -353,4 +363,61 @@ text-decoration-skip-ink: none;
 }
 .katalogPage__category__cards p:hover{
     scale: 1.01;
+}
+@media(max-width:700px){
+    .katalogPage__category__ul{
+        display: none;
+    }
+    .katalogPage__category__cards{
+        display: none !important;
+    }
+    .katalogPage__category{
+        display: grid;
+        grid-template-columns:  auto;
+        background-color: white;
+        width: 100%;
+    }
+    .accordion{
+        display: block;
+    }
+}
+
+.accordion {
+    border-radius: 5px;
+    margin: 20px 0;
+    display: none;
+}
+
+
+
+.accordionheader {
+    padding: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    justify-content: space-between; /* Sarlavha va стрелка o'rtasida bo'shliq */
+    align-items: center; /* Vertikal markazlash */
+}
+
+
+
+.accordioncontent {
+    padding: 5px;
+    background-color: white;
+}
+
+.arrow {
+    margin-left: 10px; /* стрелка va savol o'rtasida bo'shliq */
+    font-size: 1.2em; /* Ikonalar o'lchamini o'zgartirish */
+}
+.accordioncontent p{
+padding-top: 5px;
+font-family: Arial;
+font-size: 12px;
+font-weight: 400;
+line-height: 13.8px;
+letter-spacing: 0.1em;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
 }
