@@ -1,5 +1,5 @@
 "use client";
-import s from "@/app/styles/navbar.module.css"
+import s from "../styles/navbar.module.css"
 import Image from 'next/image'
 import image_sum from "../image/kalkulyator1.png"
 import logo from "../image/logo.svg"

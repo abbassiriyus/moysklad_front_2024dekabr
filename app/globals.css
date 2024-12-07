@@ -7,7 +7,3 @@ body{
   width: 100%;
   overflow-x: hidden;
 }
-.pagination-button{
-  text-wrap: nowrap !important;
-  cursor: pointer;
-}

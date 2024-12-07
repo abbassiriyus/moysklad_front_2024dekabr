@@ -2,7 +2,7 @@
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
-import s from "@/app/styles/homepage.module.css"
+import s from "./styles/homepage.module.css"
 import image_1 from "../app/image/image_1.png"
 import image_2_1 from "../app/image/image_2_1.png"
 import image_2_2 from "../app/image/image_2_2.png"
@@ -246,7 +246,7 @@ Barcha Diller va Distrebutellar
 
 <div className={s.radiocity_1}>
 <p className={s.radiocity_1_p}>
-RADIO CITY - bu mikroelektronika bozoridagi noyob va eng taniqli brend. Biz yetkazib beramiz elektron komponentlar, o'lchash asboblari, lehim uskunalari, asboblar, Arduino komponentlari, elektr mahsulotlari, maishiy elektronika uchun butlovchi qismlar va boshqalar.
+RADIO CITY - bu mikroelektronika bozoridagi noyob va eng taniqli brend.Biz yetkazib beramiz elektron komponentlar, o'lchash asboblari, lehim uskunalari, asboblar, Arduino komponentlari, elektr mahsulotlari, maishiy elektronika uchun butlovchi qismlar va boshqalar.
 <br /><br />
 
 Kengaytirilgan, muntazam yangilanib turuvchi katalog 7 000 000 dan ortiqni o'z ichiga oladi. tovarlar nomlari. Aqlli va qulay mahsulotni qidirish, etkazib berishning har xil turlari va usullari to'lov. Mahsulot mavjudligi va yetkazib berish muddatlari haqidagi soʻnggi maʼlumotlar.
