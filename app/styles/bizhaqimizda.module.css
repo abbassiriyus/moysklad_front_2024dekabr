@@ -1,0 +1,51 @@
+.about_reja{
+    display: grid;
+    grid-template-columns: 266px auto;
+    width: 90%;
+    max-width: 1327px;
+    margin: auto;
+    gap: 20px;
+}
+.about__title{
+    font-family: Arial;
+font-size: 40px;
+font-weight: 700;
+line-height: 46px;
+letter-spacing: 0.20000000298023224px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+max-width: 1327px;
+margin: auto;
+width: 90%;
+}
+.about_reja_text {
+    background: #ECF7FF;
+padding: 20px;
+}
+.about_reja_text p{
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.20000000298023224px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    
+}
+.about_reja_text h4{
+    font-family: Arial;
+font-size: 32px;
+font-weight: 700;
+line-height: 44.8px;
+letter-spacing: 0.20000000298023224px;
+text-align: left;
+text-underline-position: from-font;
+text-decoration-skip-ink: none;
+
+}
+.about_reja_cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
