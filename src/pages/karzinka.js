@@ -193,7 +193,7 @@ function sotibOlinganlar() {
     setAllSum(0)
     document.querySelector('#for_all_check input').checked = false
     localStorage.setItem('shop', JSON.stringify(a))
-    setCartCount(testData.length)
+    setCartCount(a.length)
   }
 
   function chack_box() {
