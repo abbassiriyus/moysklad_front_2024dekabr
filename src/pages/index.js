@@ -30,10 +30,12 @@ var [topTovar,setTopTovar]=useState([])
 var [mashxur,setMashxur]=useState([])
 var [product,setProduct]=useState([])
 var [link,setLink]=useState("")
+var [topTovar_1,setTopTovar_1]=useState('')
 function getTopTovar() {
   axios.get(`${url}/api/top_tovar`).then(res=>{
     if(res.data.length>0){
-      axios.get(`${url}//api/category/product/${res.data[0].category_id}?limit=10`).then(res2=>{
+      setTopTovar_1(res.data[0].category_id)
+      axios.get(`${url}/api/category/product/${res.data[0].category_id}?limit=10`).then(res2=>{
 setTopTovar(res2.data)
 axios.get(`${url}/api/document`).then(res3=>{
 if(res3.data.length>0){  
@@ -48,10 +50,12 @@ if(res3.data.length>0){
     }
   })
 }
+var [mashhur_1,setMashxur_1]=useState('')
 function getMashxur() {
   axios.get(`${url}/api/best_seller`).then(res=>{
     if(res.data.length>0){
-      axios.get(`${url}//api/category/product/${res.data[0].category_id}?limit=10`).then(res2=>{
+      setMashxur_1(res.data[0].category_id)
+      axios.get(`${url}/api/category/product/${res.data[0].category_id}?limit=10`).then(res2=>{
 setMashxur(res2.data)
       })
     }
@@ -103,7 +107,7 @@ useEffect(()=>{
           onSwiper={(swiper) => { swiperRef.current = swiper; }}
         >
           {headerImage.map((label, index) => (
-            <SwiperSlide  className={s.swipper_slide} style={{ background: `url('${label.image}')`, backgroundSize: 'cover' }} key={index}></SwiperSlide>
+            <SwiperSlide onClick={()=>{window.location=`/catalog/${label.category_id}?name=${label.title}`}}  className={s.swipper_slide} style={{ background: `url('${label.image}')`, backgroundSize: 'cover' }} key={index}></SwiperSlide>
           ))}
 
         </Swiper>
@@ -116,11 +120,11 @@ useEffect(()=>{
             }} /></div>
 
           <div style={{ cursor: 'pointer', fontSize: "20px" }} className="swiper-button-next1" >
-            <FaArrowRightLong onClick={() => { if (indexkey < slideLabels.length - 1) { setIndexKey(indexkey + 1); swiperRef.current.slideTo(indexkey); } }} /></div>
+            <FaArrowRightLong onClick={() => { if (indexkey < headerImage.length - 1) { setIndexKey(indexkey + 1); swiperRef.current.slideTo(indexkey); } }} /></div>
         </div>
         <div className={s.mini_cantroll_bar}>
           {headerImage.map((label, index) => (
-            <div style={indexkey == index ? { borderBottom: "1px solid #E30613", color: '#E30613',textWrap:'nowrap' } : { borderBottom: 'none', color: "black" }} key={index} className="pagination-button" onClick={() => { swiperRef.current.slideTo(index); setIndexKey(index) }} >
+            <div style={indexkey == index ? { borderBottom: "1px solid #E30613", color: '#E30613',textWrap:'nowrap',cursor:'pointer' } : { borderBottom: 'none', color: "black",cursor:'pointer' }} key={index} className="pagination-button" onClick={() => { swiperRef.current.slideTo(index); setIndexKey(index) }} >
               {label.title}
             </div>
           ))}</div>
@@ -180,15 +184,15 @@ useEffect(()=>{
 </div>
 </div>):(<></>)}
 
-<Sliderproduct  mapdata={product} id={"topTovarId"} data={{title:'Top sotuvlar',
+<Sliderproduct  mapdata={product} id={0} data={{title:'Top sotuvlar',
       h1:'Eng mashhur mahsulotlar',
       p:'Bizning mijozlarimiz tanlovi'
       }}/>
-      <Sliderproduct  mapdata={topTovar} id={"topTovarId"} data={{title:'Eng yaxshi takliflar',
+      <Sliderproduct  mapdata={topTovar} id={mashhur_1} data={{title:'Eng yaxshi takliflar',
       h1:'Foydali taklif',
       p:'Ajoyib takliflar va maxsus narxlar haqida bilib oling. Faqat shu oy!'
       }}/>
-      <Sliderproduct  mapdata={mashxur} id={"topTovarId"} data={{title:'Mashhur',
+      <Sliderproduct  mapdata={mashxur} id={topTovar_1} data={{title:'Mashhur',
       h1:"Birinchi bo'lib xarid qiling",
       p:"Yuqori talabga ega bo'lgan yangi mahsulotlar"
       }}/>

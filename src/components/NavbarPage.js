@@ -151,7 +151,7 @@ export default function Navbar() {
     .filter((item) => item.category_title.includes(searchKey)) 
     .slice(0, 10)
     .map((item, key) => (
-        <li style={{cursor:'pointer'}} key={key} onClick={()=>window.location=`/catalog/${item.category_id}`}>{item.category_title}</li> 
+        <li style={{cursor:'pointer'}} key={key} onClick={()=>window.location=`/catalog/${item.category_id}?title=${item.category_title}`}>{item.category_title}</li> 
     ))}
                            
                           
@@ -174,7 +174,7 @@ export default function Navbar() {
                                         <div className={s.accordioncontent}>
                                            {subCategory.map((item,key)=>{
     if(item.subcategory===subcategory__id){
-return <p onClick={()=>window.location=`/catalog/${item.category_id}`} >{item.category_title}</p>
+return <p onClick={()=>window.location=`/catalog/${item.category_id}?title=${item.category_title}`} >{item.category_title}</p>
     }
 })}
                                         </div>
@@ -193,7 +193,7 @@ return <p onClick={()=>window.location=`/catalog/${item.category_id}`} >{item.ca
                         <div className={s.katalogPage__category__cards}>
 {subCategory.map((item,key)=>{
     if(item.subcategory===subcategory__id){
-return <p onClick={()=>window.location=`/catalog/${item.category_id}`}>{item.category_title}</p>
+return <p onClick={()=>window.location=`/catalog/${item.category_id}?title=${item.category_title}`}>{item.category_title}</p>
     }
 })}
                           

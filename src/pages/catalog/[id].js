@@ -17,7 +17,7 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function Catalog() {
   const { setCartCount } = useCart();
   const router = useRouter();
-  const { id } = router.query;
+  const { id,title } = router.query;
   var [min2, setMin] = useState(0);
   var [max2, setMax] = useState(20000);
   var [data1,setData]=useState([])
@@ -26,7 +26,6 @@ export default function Catalog() {
   const totalPages = 5; 
 
   function getProduct() {
-    
     axios.get(`${url}/api/category/product/${id}?limit=12`)
       .then(res => {
         console.log('API Response:', res.data); // API javobini konsolga chiqarish
@@ -75,7 +74,7 @@ last_shop.push(data_push)
   return (
     <div>
       <Navbar />
-      <div className={s.catalog__title}>Termal tasvirlar bo’limi</div>
+      <div className={s.catalog__title}>{title}</div>
       <div className={s.catalog_body}>
         <div className={s.catalog_media_button}><FaFilter className={s.catalog_media_button__icons} /> Filter narxi</div>
         <div className={s.catalog_filter}>
@@ -102,7 +101,7 @@ last_shop.push(data_push)
               {(item.quantity || item.quantity==0)?<></>:<span className={s.count_product}><div>Sotuvda bor:</div>
             <div>{item.quantity}  dona</div></span>}
               <h1>{item.buyPrice.value/100} so`m</h1>
-              <div onClick={()=>{buyProduct(`${item.images.rows[0].miniature.downloadHref}`,`${item.pathName}`,`${item.code}`,`${item.buyPrice.value/100}`,`${item.id}`)}} className={s.catalog_icons}>
+              <div onClick={()=>{buyProduct(`${item.images.rows[0].miniature.downloadHref}`,`${item.name}`,`${item.code}`,`${item.buyPrice.value/100}`,`${item.id}`)}} className={s.catalog_icons}>
                 <TbShoppingBagPlus style={{ fontSize: '20px', color: '#6a6a6a' }} />
               </div>
             </div>
