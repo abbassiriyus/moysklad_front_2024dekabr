@@ -218,13 +218,11 @@ function sotibOlinganlar() {
   }
   const sendMessage = async (chatId, message) => {
     const botToken = '7598395550:AAFGsDx1WnlZr6WNIrFbDMfkwzsVeMcGtko'; // o'z tokeningizni kiriting
-    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+    var url=`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${message}`
+    // const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
     try {
-        const response = await axios.post(url, {
-            chat_id: chatId,
-            text: message,
-        });
+        const response = await axios.get(url);
         console.log('Xabar yuborildi:', response.data);
     } catch (error) {
         console.error('Xabar yuborishda xato:', error);
