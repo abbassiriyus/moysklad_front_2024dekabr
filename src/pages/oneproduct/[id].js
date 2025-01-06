@@ -1,19 +1,21 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import s from "./Information.module.css";
-import img1 from "../../image/image39.png"
 
-import img2 from "../../image/image40.png"
-import img3 from "../../image/image41.png"
-import img4 from "../../image/image42.png"
 import Navbar1 from "../../components/NavbarPage";
 import Footer1 from "../../components/footer";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import axios from "axios";
 import url from "@/host/host";
+import { toast, ToastContainer } from "react-toastify";
+import { useCart } from "@/host/CartContext";
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function User() {
   var router = useRouter()
+    const { setCartCount } = useCart();
+  
   var { id } = router.query
   var [data, setData] = useState({})
   function getData() {
@@ -23,6 +25,35 @@ export default function User() {
 
     })
   }
+function buyProduct() {
+  // `}`,`${}`,`${item.code}`,`${item.buyPrice.value/100}`,`${item.id}`
+  toast.success('Tovar muvaffaqiyatli sotib olindi!', {
+    position: "top-right",
+    autoClose: 3000, // 3 soniya davomida ko‘rsatish
+    className: 'custom-toast',
+  });
+  var data_push={image:`${url}/api/getimage?url=${data.images.rows[0].meta.downloadHref}`,title:data.name,code:data.code,price:data.buyPrice.value/100,id:data,id,count:1}
+  if(localStorage.getItem('shop')){
+  var last_shop=JSON.parse(localStorage.getItem('shop'))
+  }else{
+    var last_shop=[]
+  }
+
+  var push1=true
+  for (let i = 0; i < last_shop.length; i++) {
+   if (last_shop[i].id===id){
+    push1=false
+    last_shop[i].count++
+   }
+  }
+  if(push1){
+last_shop.push(data_push)
+  }
+  setCartCount(last_shop.length)
+  localStorage.setItem("shop",JSON.stringify(last_shop))
+}
+
+
   useEffect(() => {
     if (id) {
       getData()
@@ -65,7 +96,7 @@ export default function User() {
                 <div>{data.quantity} dona</div></h2>}
               <h3>{data.buyPrice?.value / 100} so'm</h3>
               <p>{data.description}</p>
-              <button>Savatga qo’shish</button>
+              <button onClick={()=>buyProduct()}>Savatga qo’shish</button>
             </div>
           </div>
           <div className={s.tovar_inf}>
@@ -82,6 +113,8 @@ export default function User() {
         </div>
       </div>
       </div>
+             <ToastContainer />
+      
       <Footer1 />
     </div>
   );

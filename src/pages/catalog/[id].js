@@ -131,7 +131,7 @@ last_shop.push(data_push)
               {(item.quantity || item.quantity==0)?<></>:<span className={s.count_product}><div>Sotuvda bor:</div>
             <div>{item.quantity}  dona</div></span>}
               <h1>{item.buyPrice.value/100} so`m</h1>
-              <div onClick={()=>{buyProduct(`${item.images.rows[0].meta.downloadHref}`,`${item.name}`,`${item.code}`,`${item.buyPrice.value/100}`,`${item.id}`)}} className={s.catalog_icons}>
+              <div onClick={()=>{buyProduct(`${url}/api/getimage?url=`+`${item.images.rows[0].meta.downloadHref}`,`${item.name}`,`${item.code}`,`${item.buyPrice.value/100}`,`${item.id}`)}} className={s.catalog_icons}>
                 <TbShoppingBagPlus style={{ fontSize: '20px', color: '#6a6a6a' }} />
               </div>
             </div>
