@@ -125,13 +125,13 @@ last_shop.push(data_push)
   if((currentPage-1)*12<=key && currentPage*12>key){
   return <div key={key} className={s.catalog_card}>
             <div className={s.catalog_card_image}>
-              <img style={{cursor:'pointer'}}  onClick={()=>window.location=`/oneproduct/${item.id}`} className={s.catalog_image} src={item.images.rows[0].miniature.downloadHref}  alt="" />
+              <img style={{cursor:'pointer'}}  onClick={()=>window.location=`/oneproduct/${item.id}`} className={s.catalog_image} src={`${url}/api/getimage?url=`+item.images.rows[0].meta.downloadHref}  alt="" />
               <h5 style={{cursor:'pointer'}}  onClick={()=>window.location=`/oneproduct/${item.id}`}>{item.pathName.slice(0,20)}</h5>
               <p style={{cursor:'pointer'}} onClick={()=>window.location=`/oneproduct/${item.id}`}>{item.name.slice(0,40)}{item.name.length>30?('...'):("")}</p>
               {(item.quantity || item.quantity==0)?<></>:<span className={s.count_product}><div>Sotuvda bor:</div>
             <div>{item.quantity}  dona</div></span>}
               <h1>{item.buyPrice.value/100} so`m</h1>
-              <div onClick={()=>{buyProduct(`${item.images.rows[0].miniature.downloadHref}`,`${item.name}`,`${item.code}`,`${item.buyPrice.value/100}`,`${item.id}`)}} className={s.catalog_icons}>
+              <div onClick={()=>{buyProduct(`${item.images.rows[0].meta.downloadHref}`,`${item.name}`,`${item.code}`,`${item.buyPrice.value/100}`,`${item.id}`)}} className={s.catalog_icons}>
                 <TbShoppingBagPlus style={{ fontSize: '20px', color: '#6a6a6a' }} />
               </div>
             </div>

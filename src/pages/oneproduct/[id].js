@@ -31,6 +31,7 @@ export default function User() {
 
   return (
     <div>
+      <div style={{padding:"20px"}}>
       <Navbar1 />
       <div className={s.Informations_page}>
         <div className={s.Informations_main}>
@@ -40,20 +41,21 @@ export default function User() {
           <div className={s.infor_cards}>
             <div className={s.infor_card_1}>
               {data.images?.rows?.length >= 3 ? (<div className={s.for_images}>
+                <div className={s.for_sliders}>
                 <div className={s.for_image_1}>
                   <div className={s.for_cent_img}>
-                    <img onClick={()=>document.querySelector('.asosiy_rasm').src=data.images?.rows[0]?.meta?.downloadHref} src={data.images?.rows[0]?.meta?.downloadHref} alt="" /></div>
+                    <img onClick={()=>document.querySelector('.asosiy_rasm').src=`${url}/api/getimage?url=`+data.images?.rows[0]?.meta?.downloadHref} src={`${url}/api/getimage?url=`+data.images?.rows[0]?.meta?.downloadHref} alt="" /></div>
                   <div className={s.for_cent_img}>
-                    <img onClick={()=>document.querySelector('.asosiy_rasm').src=data.images?.rows[1]?.meta?.downloadHref} src={data.images?.rows[1]?.meta?.downloadHref} alt="" /></div>
+                    <img onClick={()=>document.querySelector('.asosiy_rasm').src=`${url}/api/getimage?url=`+data.images?.rows[1]?.meta?.downloadHref} src={`${url}/api/getimage?url=`+data.images?.rows[1]?.meta?.downloadHref} alt="" /></div>
                   <div className={s.for_cent_img}>
-                    <img onClick={()=>document.querySelector('.asosiy_rasm').src=data.images?.rows[2]?.meta?.downloadHref} src={data.images?.rows[2]?.meta?.downloadHref} alt="" /></div>
-                </div>
+                    <img onClick={()=>document.querySelector('.asosiy_rasm').src=`${url}/api/getimage?url=`+data.images?.rows[2]?.meta?.downloadHref} src={`${url}/api/getimage?url=`+data.images?.rows[2]?.meta?.downloadHref} alt="" /></div>
+                  </div></div>
                 <div className={s.for_image_2}>
-                  <img className="asosiy_rasm" src={`https://api.abbas.uz/api/getimage?url=`+data.images?.rows[0]?.meta?.downloadHref} alt="" />
+                  <img className="asosiy_rasm" src={`${url}/api/getimage?url=`+data.images?.rows[0]?.meta?.downloadHref} alt="" />
                 </div>
               </div>) : (
-                <div>
-                  <img src={`https://api.abbas.uz/api/getimage?url=`+data.images?.rows[0]?.meta?.downloadHref} alt="" />
+                <div className={s.for_image_2}>
+                  <img className="asosiy_rasm" src={`${url}/api/getimage?url=`+data.images?.rows[0]?.meta?.downloadHref} alt="" />
                 </div>
               )}
 
@@ -78,6 +80,7 @@ export default function User() {
             <div className={s.for_circles}><div><div className={s.for_circle}></div></div>3,5 dyuymli sensorli displeyli LCD displey</div>
           </div>
         </div>
+      </div>
       </div>
       <Footer1 />
     </div>

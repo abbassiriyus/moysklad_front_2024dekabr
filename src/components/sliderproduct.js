@@ -9,6 +9,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import url from "@/host/host";
 
 export default function index_slider({color,data,mapdata,id}) {
     // SwiperCore.use([Navigation, Pagination, Autoplay]);
@@ -59,7 +60,7 @@ ref={swiperRef}
             return  <SwiperSlide>
         <div onClick={()=>window.location=`/oneproduct/${item.id}`} className={s.card}>
             <div className={s.card_img}>
-                <img src={item.images.rows[0].miniature.downloadHref} alt="" />
+                <img src={`${url}/api/getimage?url=`+item.images.rows[0].meta.downloadHref} alt="" />
             </div>
             <h5>{item.pathName.slice(0,20)}</h5>
             <p>{item.name.slice(0,40)}{item.name.length>30?('...'):("")}</p>

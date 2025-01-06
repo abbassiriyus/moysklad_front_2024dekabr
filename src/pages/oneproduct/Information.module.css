@@ -10,12 +10,43 @@
 }
 
 .for_image_1{
-    display: flex;
+    display: block;
     flex-direction: column;
     max-width: 160px;
     width: 100%;
     gap: 15px;
+    
 }
+
+.for_sliders{
+    height: 500px;
+    overflow: hidden;
+    overflow: auto;
+    padding-right: 10px;
+}
+
+.for_sliders::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+  }
+  
+  /* Track */
+  .for_sliders::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  .for_sliders::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px ;
+  }
+  
+  /* Handle on hover */
+  .for_sliders::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 
 .infor_cards{
     margin-top: 30px;
@@ -28,17 +59,26 @@
 }
 
 .for_image_2 img{
-    height: 100%;
+    width: 100%;
 }
 
 .for_cent_img{
     width: 160px;
     height: 160px;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+@media(min-width: 480px){
+    .for_cent_img{
+        overflow: hidden;
+    }
+
+    .for_sliders{
+        overflow-x: hidden;
+    }
 }
 
 .for_cent_img img{
@@ -46,7 +86,7 @@
 }
 
 .for_image_2{
-    width: 100%;
+    width: 400px;
     height: 510px;
     margin-left: 30px;
     overflow: hidden;
@@ -126,12 +166,16 @@
 }
 
 .Informations_page{
-    padding: 20px;
+    padding: 20px 0;
 }
 
 @media(max-width: 1000px){
     .Informations_main h1{
         font-size: 32px;
+    }
+
+    .for_sliders{
+        height: 370px;
     }
 
     .for_cent_img{
@@ -140,7 +184,7 @@
     }
 
     .for_image_1{
-        gap: 10px;
+        gap: 15px;
     }
 
     .for_image_2{
@@ -170,7 +214,7 @@
 
     .infor_card_2 button{
         max-width: 260px;
-        width: 100%;
+        /* width: 100%; */
         height: 40px;
         font-size: 14px;
         margin-top: 45px;
@@ -203,6 +247,34 @@
 @media(max-width: 480px){
     .for_images{
         flex-direction: column-reverse;
+    }
+
+    .for_cent_img{
+        width: 110px !important;
+        height: 110px !important;
+    }
+
+    .for_cent_img img{
+        width: 110px;
+        height: 110px;
+        object-fit: cover;
+    }
+
+    .for_sliders{
+        padding-bottom: 20px;
+        padding-right: 0;
+    }
+
+    .for_sliders{
+        height: auto;
+        width: 100%;
+        overflow-y: hidden;
+        overflow-x: auto;
+        margin-top: 20px;
+    }
+
+    .for_image_1{
+        display: flex;
     }
 
     .for_image_2{
@@ -240,7 +312,8 @@
     }
 
     .infor_card_2 button{
-        width: 294px;
+        max-width: 294px;
+        width: 100%;
         height: 48px;
         margin: auto;
         display: flex;
