@@ -42,18 +42,18 @@ export default function User() {
               {data.images?.rows?.length >= 3 ? (<div className={s.for_images}>
                 <div className={s.for_image_1}>
                   <div className={s.for_cent_img}>
-                    <img onClick={()=>document.querySelector('.asosiy_rasm').src=data.images?.rows[0]?.miniature?.downloadHref} src={data.images?.rows[0]?.miniature?.downloadHref} alt="" /></div>
+                    <img onClick={()=>document.querySelector('.asosiy_rasm').src=data.images?.rows[0]?.meta?.downloadHref} src={data.images?.rows[0]?.meta?.downloadHref} alt="" /></div>
                   <div className={s.for_cent_img}>
-                    <img onClick={()=>document.querySelector('.asosiy_rasm').src=data.images?.rows[1]?.miniature?.downloadHref} src={data.images?.rows[1]?.miniature?.downloadHref} alt="" /></div>
+                    <img onClick={()=>document.querySelector('.asosiy_rasm').src=data.images?.rows[1]?.meta?.downloadHref} src={data.images?.rows[1]?.meta?.downloadHref} alt="" /></div>
                   <div className={s.for_cent_img}>
-                    <img onClick={()=>document.querySelector('.asosiy_rasm').src=data.images?.rows[2]?.miniature?.downloadHref} src={data.images?.rows[2]?.miniature?.downloadHref} alt="" /></div>
+                    <img onClick={()=>document.querySelector('.asosiy_rasm').src=data.images?.rows[2]?.meta?.downloadHref} src={data.images?.rows[2]?.meta?.downloadHref} alt="" /></div>
                 </div>
                 <div className={s.for_image_2}>
-                  <img className="asosiy_rasm" src={data.images?.rows[0]?.miniature?.downloadHref} alt="" />
+                  <img className="asosiy_rasm" src={`https://api.abbas.uz/api/getimage?url=`+data.images?.rows[0]?.meta?.downloadHref} alt="" />
                 </div>
               </div>) : (
                 <div>
-                  <img src={data.images?.rows[0]?.miniature?.downloadHref} alt="" />
+                  <img src={`https://api.abbas.uz/api/getimage?url=`+data.images?.rows[0]?.meta?.downloadHref} alt="" />
                 </div>
               )}
 
