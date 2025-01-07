@@ -30,7 +30,7 @@ export default function Catalog() {
       .then(res => {
         
         const filteredData = (res.data).filter(product => {
-          return product.buyPrice.value/100 >= min2 && product.buyPrice.value/100 <= max2;
+          return product.salePrices[0].value/100 >= min2 && product.salePrices[0].value/100 <= max2;
       });
       // Pagination
       const totalPages = Math.ceil(filteredData.length / 12);
@@ -44,7 +44,7 @@ export default function Catalog() {
        axios.get(`${url}/api/category/product/${id}?limit=100`)
       .then(res => {
         const filteredData = (res.data).filter(product => {
-          return (product.buyPrice.value/100 >= min2 && product.buyPrice.value/100 <= max2)
+          return (product.salePrices[0].value/100 >= min2 && product.salePrices[0].value/100 <= max2)
       });
       // Pagination
       const totalPages = Math.ceil(filteredData.length / 12);
@@ -125,13 +125,15 @@ last_shop.push(data_push)
   if((currentPage-1)*12<=key && currentPage*12>key){
   return <div key={key} className={s.catalog_card}>
             <div className={s.catalog_card_image}>
+            <div style={{width:'90%',height:'139px',display:'flex',justifyContent:'center',alignItems:'center'}}>
               <img style={{cursor:'pointer'}}  onClick={()=>window.location=`/oneproduct/${item.id}`} className={s.catalog_image} src={`${url}/api/getimage?url=`+item.images.rows[0].meta.downloadHref}  alt="" />
-              <h5 style={{cursor:'pointer'}}  onClick={()=>window.location=`/oneproduct/${item.id}`}>{item.pathName.slice(0,20)}</h5>
-              <p style={{cursor:'pointer'}} onClick={()=>window.location=`/oneproduct/${item.id}`}>{item.name.slice(0,40)}{item.name.length>30?('...'):("")}</p>
+</div>
+              <h5 style={{cursor:'pointer'}}  onClick={()=>window.location=`/oneproduct/${item.id}`}>{item.pathName.slice(0,30)}</h5>
+              <p  style={{cursor:'pointer',height:'50px'}} onClick={()=>window.location=`/oneproduct/${item.id}`}>{item.name.slice(0,40)}{item.name.length>30?('...'):("")}</p>
               {(item.quantity || item.quantity==0)?<></>:<span className={s.count_product}><div>Sotuvda bor:</div>
             <div>{item.quantity}  dona</div></span>}
-              <h1>{item.buyPrice.value/100} so`m</h1>
-              <div onClick={()=>{buyProduct(`${url}/api/getimage?url=`+`${item.images.rows[0].meta.downloadHref}`,`${item.name}`,`${item.code}`,`${item.buyPrice.value/100}`,`${item.id}`)}} className={s.catalog_icons}>
+              <h1>{item.salePrices[0].value/100} so`m</h1>
+              <div onClick={()=>{buyProduct(`${url}/api/getimage?url=`+`${item.images.rows[0].meta.downloadHref}`,`${item.name}`,`${item.code}`,`${item.salePrices[0].value/100}`,`${item.id}`)}} className={s.catalog_icons}>
                 <TbShoppingBagPlus style={{ fontSize: '20px', color: '#6a6a6a' }} />
               </div>
             </div>

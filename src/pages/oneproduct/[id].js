@@ -26,13 +26,13 @@ export default function User() {
     })
   }
 function buyProduct() {
-  // `}`,`${}`,`${item.code}`,`${item.buyPrice.value/100}`,`${item.id}`
+  // `}`,`${}`,`${item.code}`,`${item.salePrices[0].value/100}`,`${item.id}`
   toast.success('Tovar muvaffaqiyatli sotib olindi!', {
     position: "top-right",
     autoClose: 3000, // 3 soniya davomida ko‘rsatish
     className: 'custom-toast',
   });
-  var data_push={image:`${url}/api/getimage?url=${data.images.rows[0].meta.downloadHref}`,title:data.name,code:data.code,price:data.buyPrice.value/100,id:data,id,count:1}
+  var data_push={image:`${url}/api/getimage?url=${data.images.rows[0].meta.downloadHref}`,title:data.name,code:data.code,price:data.salePrices[0].value/100,id:data,id,count:1}
   if(localStorage.getItem('shop')){
   var last_shop=JSON.parse(localStorage.getItem('shop'))
   }else{
@@ -94,7 +94,9 @@ last_shop.push(data_push)
             <div className={s.infor_card_2}>
               {(data.quantity || data.quantity == 0) ? <></> : <h2 className={s.count_product}><div>Sotuvda bor:</div>
                 <div>{data.quantity} dona</div></h2>}
-              <h3>{data.buyPrice?.value / 100} so'm</h3>
+                <h3>{Array.isArray(data.salePrices) && data.salePrices.length > 0 
+    ? data.salePrices[0].value / 100 
+    : 'N/A'} so'm</h3>
               <p>{data.description}</p>
               <button onClick={()=>buyProduct()}>Savatga qo’shish</button>
             </div>

@@ -66,7 +66,7 @@ ref={swiperRef}
             <p>{item.name.slice(0,40)}{item.name.length>30?('...'):("")}</p>
             {(item.quantity || item.quantity==0)?<></>:<div className={s.count_product}><div>Sotuvda bor:</div>
             <div>{item.quantity} dona</div></div>}
-            <h2>{item.buyPrice.value/100} so`m</h2>
+            <h2 style={{fontSize:'23px'}}>{item.salePrices[0].value/100} so`m</h2>
 
         </div>
       </SwiperSlide>
@@ -81,7 +81,7 @@ ref={swiperRef}
     <FaArrowRightLong onClick={handleNextSlide} /> </div>
     <div className={s.section2}>
        <div className={s.wer12} style={{width:'98%',margin:'auto'}}>
-       <h2>{data && data.h1}</h2>
+       <h2 >{data && data.h1}</h2>
 <p>{data && data.p}</p>
        </div>
 <button onClick={()=>{window.location=`/catalog/${id}?title=${data && data.title}`}}>Tanlovga o'ting</button>

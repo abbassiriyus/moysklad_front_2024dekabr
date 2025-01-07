@@ -46,9 +46,10 @@ background: #FFFFFF;
 position: relative;
     }
     .catalog_image{
-        width: 70%;
+       max-width: 90%;
+       height: 100%;
         height: auto;
-        margin-left: 15%;
+        /* margin-left: 15%; */
     }
     .catalog_card h5{
         font-family: "Inter", sans-serif;
@@ -59,6 +60,7 @@ text-align: left;
 text-underline-position: from-font;
 text-decoration-skip-ink: none;
 margin-top: 10px;
+height: 12px;
 margin-bottom: 10px;
     }
     .catalog_card p{
@@ -69,7 +71,7 @@ line-height: 16.94px;
 text-align: left;
 text-underline-position: from-font;
 text-decoration-skip-ink: none;
-margin-bottom: 30px;
+/* margin-bottom: 30px; */
     }
     .catalog_card span{
 color: #E30613;
