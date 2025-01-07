@@ -82,6 +82,7 @@ grid-template-columns: 1fr;
 
     .contact__title{
         font-size: 24px;
+        width: 90%;
     }
 
     .contact_text h5{

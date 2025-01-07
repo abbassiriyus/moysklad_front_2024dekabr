@@ -478,8 +478,17 @@ height: 350px;
    .video__big iframe{
 height: 200px;
 } 
+.title_homiylar{
+    font-size: 20px;
+    line-height: 23px;
+}
+.video_yangilik .video__title{font-size: 20px;}
+
 .video__smallCard iframe {
     height: 100px;
+}
+.video_yangilik .yangilik__title{
+    font-size: 20px;
 }
 }
 

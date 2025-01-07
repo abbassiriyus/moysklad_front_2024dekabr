@@ -2,6 +2,9 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import s from "../styles/homepage.module.css"
+import new_1 from '../image/new_1.png'
+import new_2 from '../image/new_2.png'
+import new_3 from '../image/new_3.png'
 
 import Sliderproduct from '../components/sliderproduct';
 import roboto from "../image/roboto.png"
@@ -267,21 +270,21 @@ Barcha Diller va Distrebutellar
   <h2 className={s.yangilik__title}>Yangiliklar</h2>
 <div className={s.yangilik__cards}>
   <div className={s.yangilik__card}>
-    <img src="https://s3-alpha-sig.figma.com/img/29c1/efe1/a14006b8f6cef9d91076ce8376ce219f?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EYpwfX-OdlLDM-dD3Fhw9RkW83emkW5F2D19bpNhrmhUosMPZvUXETIA-hxbL7kehjYG9YOUsmtaZ-FQ~YDpKIklQizgJaXpX6ZbuZGA1vVR8TQrUTfsiYxyUf8OCXjged2vPbWjrZNOd8HqLbGqieYFiHTosGFasy7dTy2fGtFJOTPLGLQDiSE-c3mKHUCjByXzyMy0XDVLpbMHfOahY6YQbFB5gsSlJqlwepL651Sxu35J6YtoZoif3Z1Fm3edxwxL6i4cdnDywPrrYaTEbicskgj24muSEAyBIC8BmWNWBUNWrsX47na4A0izCfkK5xJKjK0f38ODm94G92MVMA__" alt="" />
+    <Image style={{width:'100%'}} src={new_1} alt="" />
     <div>
       <p>17.06.2024</p>
       <p>10ta xarid uchun +2ta mahsulot</p>
     </div>
   </div>
   <div className={s.yangilik__card}>
-    <img src="https://s3-alpha-sig.figma.com/img/29c1/efe1/a14006b8f6cef9d91076ce8376ce219f?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EYpwfX-OdlLDM-dD3Fhw9RkW83emkW5F2D19bpNhrmhUosMPZvUXETIA-hxbL7kehjYG9YOUsmtaZ-FQ~YDpKIklQizgJaXpX6ZbuZGA1vVR8TQrUTfsiYxyUf8OCXjged2vPbWjrZNOd8HqLbGqieYFiHTosGFasy7dTy2fGtFJOTPLGLQDiSE-c3mKHUCjByXzyMy0XDVLpbMHfOahY6YQbFB5gsSlJqlwepL651Sxu35J6YtoZoif3Z1Fm3edxwxL6i4cdnDywPrrYaTEbicskgj24muSEAyBIC8BmWNWBUNWrsX47na4A0izCfkK5xJKjK0f38ODm94G92MVMA__" alt="" />
+    <Image  style={{width:'100%'}}  src={new_2} alt="" />
     <div>
       <p>17.06.2024</p>
       <p>10ta xarid uchun +2ta mahsulot</p>
     </div>
   </div>
   <div className={s.yangilik__card}>
-    <img src="https://s3-alpha-sig.figma.com/img/29c1/efe1/a14006b8f6cef9d91076ce8376ce219f?Expires=1734307200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=EYpwfX-OdlLDM-dD3Fhw9RkW83emkW5F2D19bpNhrmhUosMPZvUXETIA-hxbL7kehjYG9YOUsmtaZ-FQ~YDpKIklQizgJaXpX6ZbuZGA1vVR8TQrUTfsiYxyUf8OCXjged2vPbWjrZNOd8HqLbGqieYFiHTosGFasy7dTy2fGtFJOTPLGLQDiSE-c3mKHUCjByXzyMy0XDVLpbMHfOahY6YQbFB5gsSlJqlwepL651Sxu35J6YtoZoif3Z1Fm3edxwxL6i4cdnDywPrrYaTEbicskgj24muSEAyBIC8BmWNWBUNWrsX47na4A0izCfkK5xJKjK0f38ODm94G92MVMA__" alt="" />
+    <Image  style={{width:'100%'}}  src={new_3} alt="" />
     <div>
       <p>17.06.2024</p>
       <p>10ta xarid uchun +2ta mahsulot</p>

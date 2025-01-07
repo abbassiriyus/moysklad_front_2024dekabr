@@ -164,6 +164,7 @@ border: none;
     .about_reja{
         display: grid;
         gap: 70px;
+        width: 95%;
         grid-template-columns:  auto;} 
 }
 @media(max-width:650px){
@@ -200,6 +201,7 @@ border: none;
     .about__title{
         font-size: 20px;
         line-height: 23px;
+        width: 95%;
     }
 
     .about_reja_card h4{

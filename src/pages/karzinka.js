@@ -232,18 +232,18 @@ function sotibOlish() {
   var input_1 = document.querySelectorAll('.one_input')
 var message=`Yangi buyurtma`+` %0A `
 message+="Buyurtmachi:"+document.querySelectorAll('#checkout_1 input')[0].value+`%0A`
-message+="Nomeri:"+document.querySelectorAll('#checkout_1 input')[1].value+`%0A`
+message+="Nomeri:"+document.querySelectorAll('#checkout_1 input')[1].value+`%0A`+`%0A`
 
 for (let i = 0; i < input_1.length; i++) {
  if (input_1[i].checked) {
   message=message+`nomi:`+data[i].title+` %0A `
-  message+=`narxi:`+data[i].price+` %0A `
-  message+=`soni:`+data[i].count+` %0A `
+  message+=`narxi:`+data[i].price+` so'm`+` %0A`
+  message+=`soni:`+data[i].count+` ta`+` %0A`+` %0A`
  }
   
 }
 
-message+=`Jami:`+allSum
+message+=`Jami:`+allSum+` so'm`
 sendMessage(-1002481822428,message)
 deleteAll()
 }

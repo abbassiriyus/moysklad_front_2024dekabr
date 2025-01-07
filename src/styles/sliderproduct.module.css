@@ -76,7 +76,7 @@ margin-bottom: 20px;
     padding-top: 10px;
     background-color: white;
     width: 100%;
-    box-shadow: 0px 2px 15px 0px #00000033;
+    /* box-shadow: 0px 2px 15px 0px #00000033; */
     border: 1px solid #DDEAF2;
     border-radius: 6px;
 }
@@ -91,8 +91,8 @@ margin-bottom: 20px;
     font-weight: 500;
     margin-top: 10px;
     color: rgb(44, 44, 44);
-    margin-bottom: 20px;
-    height: 60px;
+    /* margin-bottom: 20px; */
+    min-height: 30px;
 }
 .top_slider .header_carousel .card h2{
     text-align: left;
@@ -189,6 +189,22 @@ height: 200px;
 }
 }
 @media(max-width:500px){
+    .top_slider .card{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        min-height: auto;
+        min-height: 240px;
+        /* margin-right: 5px; */
+        }
+    .top_slider .main_1 .card{
+        padding: 10px;
+    }
+    .top_slider .header_carousel .card h5{
+        text-align: left;
+        height: 8px !important;
+        font-size: 8px !important;
+    }
     .wer12{
         display: none;
     }
@@ -235,7 +251,7 @@ text-decoration-skip-ink: none;
         /* height: 60px; */
         /* background-color: red; */
         font-family: Inter;
-font-size: 14px;
+font-size: 14px !important;
 font-weight: 700;
 line-height: 24.2px;
 text-align: left;
@@ -254,7 +270,6 @@ text-decoration-skip-ink: none;
             width: 80px;
             height: auto;
             max-height: 90%;
-            background-color: red;
         }
         .top_slider .main_1 h1{
             margin-bottom: 10px;

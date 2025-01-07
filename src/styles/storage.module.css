@@ -79,6 +79,7 @@ text-decoration-skip-ink: none;
 @media(max-width: 480px){
     .storage_title{
         font-size: 24px;
+        width: 95%;
     }
 
     .storage__card h1{
@@ -88,5 +89,11 @@ text-decoration-skip-ink: none;
     .storage__card p{
         font-size: 14px;
         line-height: 18px;
+    }
+    .storage__card{
+        border: 1px solid #00415A;
+        padding: 20px;
+        width: 95%;
+        margin: auto;
     }
 }
