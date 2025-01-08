@@ -94,6 +94,7 @@ useEffect(()=>{
 
   return (
     <div >
+      <div style={{padding:"0 20px"}}>
       <Navbar />
       <div className={s.carousel_panel}>
         <Swiper
@@ -131,6 +132,7 @@ useEffect(()=>{
               {label.title}
             </div>
           ))}</div>
+      </div>
       </div>
 
 
@@ -187,6 +189,7 @@ useEffect(()=>{
 </div>
 </div>):(<></>)}
 
+<div>
 <Sliderproduct  mapdata={product} id={0} data={{title:'Top sotuvlar',
       h1:'Eng mashhur mahsulotlar',
       p:'Bizning mijozlarimiz tanlovi'
@@ -199,8 +202,9 @@ useEffect(()=>{
       h1:"Birinchi bo'lib xarid qiling",
       p:"Yuqori talabga ega bo'lgan yangi mahsulotlar"
       }}/>
+      </div>
 
-
+<div style={{padding:"0 20px"}}>
 <div className={s.barcha_homiylar}>
 <h2 className={s.title_homiylar}>
 Barcha Diller va Distrebutellar
@@ -305,7 +309,7 @@ Kengaytirilgan, muntazam yangilanib turuvchi katalog 7 000 000 dan ortiqni o'z
 Buyurtmalarni Rossiya, Belarus, Qozog'iston, Armaniston va Qirg'izistonning barcha hududlariga yetkazib beramiz.
 </p>
 <Image className={s.radiocity_1_img} src={roboto} alt="" />
-</div>
+</div></div>
 <Footer/>
 
 

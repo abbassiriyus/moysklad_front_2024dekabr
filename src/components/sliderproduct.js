@@ -41,14 +41,19 @@ ref={swiperRef}
         // Breakpoints
         220: {
           slidesPerView: 2,
-        },   400: {
+          spaceBetween: 10
+
+        },   420: {
           slidesPerView: 2,
+          spaceBetween: 20
         },
         768: {
           slidesPerView: 3,
+          spaceBetween: 20
         },
         1024: {
           slidesPerView: 4,
+          spaceBetween: 20
         },
       }}
       autoplay={{
@@ -66,7 +71,7 @@ ref={swiperRef}
             <p>{item.name.slice(0,40)}{item.name.length>30?('...'):("")}</p>
             {(item.quantity || item.quantity==0)?<></>:<div className={s.count_product}><div>Sotuvda bor:</div>
             <div>{item.quantity} dona</div></div>}
-            <h2 style={{fontSize:'23px'}}>{item.salePrices[0].value/100} so`m</h2>
+            <h2>{item.salePrices[0].value/100} so`m</h2>
 
         </div>
       </SwiperSlide>

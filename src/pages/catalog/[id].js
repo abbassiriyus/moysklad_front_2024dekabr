@@ -95,6 +95,7 @@ last_shop.push(data_push)
 
   return (
     <div>
+      <div style={{padding:"20px"}}>
       <Navbar />
       <div className={s.catalog__title}>{title}</div>
       <div className={s.catalog_body}>
@@ -125,7 +126,7 @@ last_shop.push(data_push)
   if((currentPage-1)*12<=key && currentPage*12>key){
   return <div key={key} className={s.catalog_card}>
             <div className={s.catalog_card_image}>
-            <div className={s.image_div} style={{width:'90%',height:'139px',display:'flex',justifyContent:'center',alignItems:'center'}}>
+            <div className={s.image_div} style={{width:'90%',height:'100px',display:'flex',justifyContent:'center',alignItems:'center'}}>
               <img style={{cursor:'pointer'}}  onClick={()=>window.location=`/oneproduct/${item.id}`} className={s.catalog_image} src={`${url}/api/getimage?url=`+item.images.rows[0].meta.downloadHref}  alt="" />
 </div>
               <h5 style={{cursor:'pointer'}}  onClick={()=>window.location=`/oneproduct/${item.id}`}>{item.pathName.slice(0,30)}</h5>
@@ -150,6 +151,7 @@ last_shop.push(data_push)
         onPageChange={handlePageChange}
       />):("")}
        <ToastContainer />
+       </div>
       <Footer1 />
     </div>
   )
