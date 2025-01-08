@@ -50,6 +50,7 @@ position: relative;
         width: 70%;
         height: auto;
         margin-left: 15%;
+        max-height: 95%;
     }
     .catalog_card h5{
         font-family: "Inter", sans-serif;
@@ -61,6 +62,7 @@ text-underline-position: from-font;
 text-decoration-skip-ink: none;
 margin-top: 10px;
 margin-bottom: 10px;
+min-height: 14px;
     }
     .catalog_card p{
         font-family: "Inter", sans-serif;
@@ -77,6 +79,8 @@ color: rgb(44, 44, 44);
 color: #E30613;
 font-family: Arial;
 font-size: 11px;
+display: flex;
+gap: 4px;
 font-weight: 400;
 line-height: 12.65px;
 text-align: left;
@@ -228,17 +232,51 @@ text-underline-position: from-font;
 text-decoration-skip-ink: none;
 
         }
-        
+        .count_product{
+            display: flex !important;
+        }
         .catalog__title{
             font-size: 20px;
         }
 
         .catalog_card h1{
-            font-size: 14px;
+            font-size: 11px;
+            line-height: 14px;
         }
 
         .catalog_card p{
             font-size: 12px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+        }
+        .image_div{
+            height: 90px !important;
+        }
+        .catalog_card h5{
+            height: 16px;
+            font-size: 8px;
+        }
+        .catalog_card{
+            padding: 10px;
+        }
+        .catalog_card span{
+            font-size: 8px;
+            line-height: 10px;
+        }
+        .catalog__title{
+            margin-top: 20px;
+            margin-bottom: 3px;
+        }
+        .catalog_icons{
+            width: 25px;
+            height: 25px;
+            border: 1px solid #D9D9D9;
+            position: absolute;
+            bottom: 10px;
+            border-radius: 50%;
+            right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
         }
     }

@@ -26,7 +26,7 @@ export default function Catalog() {
 
   function getProduct() {
     if(id==0){
-      axios.get(`${url}/api/product?limit=100`)
+      axios.get(`${url}/api/product?limit=60`)
       .then(res => {
         
         const filteredData = (res.data).filter(product => {
@@ -41,7 +41,7 @@ export default function Catalog() {
         console.error('API Error:', err); // Xatolik yuz bersa, konsolga chiqarish
       });
     }else if(id){
-       axios.get(`${url}/api/category/product/${id}?limit=100`)
+       axios.get(`${url}/api/category/product/${id}?limit=60`)
       .then(res => {
         const filteredData = (res.data).filter(product => {
           return (product.salePrices[0].value/100 >= min2 && product.salePrices[0].value/100 <= max2)
@@ -126,7 +126,7 @@ last_shop.push(data_push)
   if((currentPage-1)*12<=key && currentPage*12>key){
   return <div key={key} className={s.catalog_card}>
             <div className={s.catalog_card_image}>
-            <div className={s.image_div} style={{width:'90%',height:'100px',display:'flex',justifyContent:'center',alignItems:'center'}}>
+            <div className={s.image_div} style={{width:'90%',height:'140px',display:'flex',justifyContent:'center',alignItems:'center'}}>
               <img style={{cursor:'pointer'}}  onClick={()=>window.location=`/oneproduct/${item.id}`} className={s.catalog_image} src={`${url}/api/getimage?url=`+item.images.rows[0].meta.downloadHref}  alt="" />
 </div>
               <h5 style={{cursor:'pointer'}}  onClick={()=>window.location=`/oneproduct/${item.id}`}>{item.pathName.slice(0,30)}</h5>

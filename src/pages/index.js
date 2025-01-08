@@ -82,7 +82,7 @@ function getHeaderData() {
 })
 }
 useEffect(()=>{
-  axios.get(`${url}/api/product`).then(Res=>{
+  axios.get(`${url}/api/product?limit=100`).then(Res=>{
     setProduct(Res.data);
     getContent();
   })
