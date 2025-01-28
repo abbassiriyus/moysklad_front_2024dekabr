@@ -6,10 +6,20 @@ import Image from 'next/image'
 import socials1 from "../image/socials.png"
 import socials2 from "../image/socials (1).png"
 import socials3 from "../image/socials (2).png"
+import Head from 'next/head'
 
 export default function page() {
   return (
     <div>
+           <Head>
+        <title>Aloqa - RCE.uz</title>
+        <meta name="description" content="RCE.uz - Biz bilan bog'lanish uchun aloqa ma'lumotlari." />
+        <meta name="keywords" content="aloqa, RCE.uz, elektronika do'koni, bog'lanish" />
+        <meta property="og:title" content="Aloqa - RCE.uz" />
+        <meta property="og:description" content="Biz bilan bog'lanish uchun aloqa ma'lumotlari." />
+        <meta property="og:url" content="https://rce.uz/contact" />
+        <link rel="canonical" href="https://rce.uz/contact" />
+      </Head>
       <div style={{padding:"20px"}}>
         <Navbar1/>
 <div className={s.contact__title}>

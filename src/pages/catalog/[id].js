@@ -14,6 +14,7 @@ import url from '@/host/host';
 import { useRouter } from 'next/router';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Head from 'next/head';
 export default function Catalog() {
   const { setCartCount } = useCart();
   const router = useRouter();
@@ -95,6 +96,18 @@ last_shop.push(data_push)
 
   return (
     <div>
+          <Head>
+        <title>Katalog - RCE.uz</title>
+        <meta name="description" content="RCE.uz - Eng so'nggi elektronika mahsulotlari, telefonlar, kompyuterlar va boshqa ko'plab mahsulotlar." />
+        <meta name="keywords" content="elektronika, katalog, telefonlar, kompyuterlar, RCE.uz" />
+        <meta property="og:title" content="Katalog - RCE.uz" />
+        <meta property="og:description" content="Eng so'nggi elektronika mahsulotlarini toping." />
+        <meta property="og:url" content="https://rce.uz/catalog" />
+        <meta property="og:image" content="URL_TO_YOUR_IMAGE" />
+        <link rel="canonical" href="https://rce.uz/catalog" />
+      </Head>
+
+      
       <div style={{padding:"20px"}}>
       <Navbar />
       <div className={s.catalog__title}>{title}</div>
@@ -127,7 +140,7 @@ last_shop.push(data_push)
   return <div key={key} className={s.catalog_card}>
             <div className={s.catalog_card_image}>
             <div className={s.image_div} style={{width:'90%',height:'140px',display:'flex',justifyContent:'center',alignItems:'center'}}>
-              <img style={{cursor:'pointer'}}  onClick={()=>window.location=`/oneproduct/${item.id}`} className={s.catalog_image} src={`${url}/api/getimage?url=`+item.images.rows[0].meta.downloadHref}  alt="" />
+              <img style={{cursor:'pointer'}}  onClick={()=>window.location=`/oneproduct/${item.id}`} className={s.catalog_image} src={item.images?.rows[0]?.meta?.downloadHref?`${url}/api/getimage?url=`+item.images?.rows[0]?.meta?.downloadHref : "https://thumb.ac-illust.com/b1/b170870007dfa419295d949814474ab2_t.jpeg"}  alt="" />
 </div>
               <h5 style={{cursor:'pointer'}}  onClick={()=>window.location=`/oneproduct/${item.id}`}>{item.pathName.slice(0,30)}</h5>
               <p  style={{cursor:'pointer',height:'50px'}} onClick={()=>window.location=`/oneproduct/${item.id}`}>{item.name.slice(0,40)}{item.name.length>30?('...'):("")}</p>

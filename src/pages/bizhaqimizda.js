@@ -9,6 +9,7 @@ import card_image3 from "../image/Component 10 (2).png";
 import card_image4 from "../image/Component 10 (3).png";
 import card_image5 from "../image/Component 10 (4).png";
 import card_image6 from "../image/Component 10 (5).png";
+import Head from 'next/head';
 
 
 
@@ -16,6 +17,17 @@ export default function page() {
 
     return (
     <div className={s.about}>
+            <Head>
+        <title>Biz haqimizda - RCE.uz</title>
+        <meta name="description" content="RCE.uz - Elektronika do'koni haqida ma'lumot. Bizning maqsadimiz sifatli mahsulotlarni taqdim etish." />
+        <meta name="keywords" content="biz haqimizda, RCE.uz, elektronika do'koni" />
+        <meta property="og:title" content="Biz haqimizda - RCE.uz" />
+        <meta property="og:description" content="Bizning maqsadimiz sifatli mahsulotlarni taqdim etish." />
+        <meta property="og:url" content="https://rce.uz/bizhaqimizada" />
+        <link rel="canonical" href="https://rce.uz/bizhaqimizada" />
+      </Head>
+
+
     <div  style={{padding:"0 20px"}}>
     <Navbar1/>
     <div className={s.about__title}>

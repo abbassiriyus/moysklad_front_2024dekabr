@@ -11,6 +11,7 @@ import url from "@/host/host";
 import { toast, ToastContainer } from "react-toastify";
 import { useCart } from "@/host/CartContext";
 import 'react-toastify/dist/ReactToastify.css';
+import Head from "next/head";
 
 export default function User() {
   var router = useRouter()
@@ -62,6 +63,16 @@ last_shop.push(data_push)
 
   return (
     <div>
+    <Head>
+        <title>{data.name} - RCE.uz</title>
+        <meta name="description" content={data.description || "Mahsulot haqida batafsil ma'lumot."} />
+        <meta name="keywords" content={`${data.name}, ${data.code}, RCE.uz`} />
+        <meta property="og:title" content={data.name} />
+        <meta property="og:description" content={data.description || "Mahsulot haqida batafsil ma'lumot."} />
+        <meta property="og:image" content={`${url}/api/getimage?url=${data.images?.rows[0]?.meta?.downloadHref}`} />
+        <meta property="og:url" content={`https://rce.uz/oneproduct/${id}`} />
+        <link rel="canonical" href={`https://rce.uz/oneproduct/${id}`} />
+      </Head>
       <div style={{padding:"20px"}}>
       <Navbar1 />
       <div className={s.Informations_page}>
@@ -86,31 +97,28 @@ last_shop.push(data_push)
                 </div>
               </div>) : (
                 <div className={s.for_image_2}>
-                  <img className="asosiy_rasm" src={`${url}/api/getimage?url=`+data.images?.rows[0]?.meta?.downloadHref} alt="" />
+                  <img className="asosiy_rasm" src={data.images?.rows[0]?.meta?.downloadHref?`${url}/api/getimage?url=`+data.images?.rows[0]?.meta?.downloadHref: "https://thumb.ac-illust.com/b1/b170870007dfa419295d949814474ab2_t.jpeg" } alt="" />
                 </div>
               )}
 
             </div>
             <div className={s.infor_card_2}>
-              {(data.quantity || data.quantity == 0) ? <></> : <h2 className={s.count_product}><div>Sotuvda bor:</div>
+              {(data.quantity || data.quantity == 0) ? <></> : <h2 style={{display:'flex',gap:'3px'}} className={s.count_product}><div>Sotuvda bor:</div>
                 <div>{data.quantity} dona</div></h2>}
                 <h3>{Array.isArray(data.salePrices) && data.salePrices.length > 0 
     ? data.salePrices[0].value / 100 
     : 'N/A'} so'm</h3>
-              <p>{data.description}</p>
+              
               <button onClick={()=>buyProduct()}>Savatga qo’shish</button>
             </div>
           </div>
           <div className={s.tovar_inf}>
-            <h3>Asosiy xususiyatlar:</h3>
-            <div className={s.for_circles}><div><div className={s.for_circle}></div></div>Termik ruxsat: 160 x 120 (19200 piksel)</div>
-            <div className={s.for_circles}><div><div className={s.for_circle}></div></div>Issiqlik sezuvchanligi:  40 mK (25 °C da, F#=1,0)</div>
-            <div className={s.for_circles}><div><div className={s.for_circle}></div></div>Haroratni o'lchash diapazoni: -20°C dan 550°C (-4°F~1022°F)</div>
-            <div className={s.for_circles}><div><div className={s.for_circle}></div></div>Aniqlik: 15°C va 35°C (59°F va 95°F) orasidagi muhit harorati va 0°C (32°F) dan yuqori ob'ekt harorati uchun maksimal (±2°C/3,6°F, ±2%)</div>
-            <div className={s.for_circles}><div><div className={s.for_circle}></div></div>Dastlabki oʻlchash sozlamalari: markaziy nuqta, issiq nuqta, sovuq nuqta, foydalanuvchi tomonidan belgilangan nuqta/chiziq/hudud</div>
-            <div className={s.for_circles}><div><div className={s.for_circle}></div></div>Qo‘lda fokuslash</div>
-            <div className={s.for_circles}><div><div className={s.for_circle}></div></div>Kadr tezligi 25 Gts</div>
-            <div className={s.for_circles}><div><div className={s.for_circle}></div></div>3,5 dyuymli sensorli displeyli LCD displey</div>
+            {data.description?<h3>Asosiy xususiyatlar:</h3>:<h3></h3>}
+            {data.description?.split('#').map((item,key)=>{
+              return  <div className={s.for_circles}><div><div className={s.for_circle}></div></div>{item}</div>
+            })}
+          
+
           </div>
         </div>
       </div>

@@ -14,6 +14,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useCart } from "@/host/CartContext";
+import Head from "next/head";
 function page() {
 
 
@@ -266,6 +267,16 @@ deleteAll()
 
   return (
     <div className={s.App}>
+            <Head>
+        <title>Karzinka - RCE.uz</title>
+        <meta name="description" content="RCE.uz - Sizning karzinkangizdagi mahsulotlar." />
+        <meta name="keywords" content="karzinka, RCE.uz, onlayn do'kon" />
+        <meta property="og:title" content="Karzinka - RCE.uz" />
+        <meta property="og:description" content="Sizning karzinkangizdagi mahsulotlar." />
+        <meta property="og:url" content="https://rce.uz/karzinka" />
+        <link rel="canonical" href="https://rce.uz/karzinka" />
+      </Head>
+
       <div style={{padding:"20px"}}>
       <Navbar1 />
       <div className={s.card_main}>

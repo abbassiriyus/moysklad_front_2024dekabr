@@ -65,7 +65,7 @@ ref={swiperRef}
             return  <SwiperSlide>
         <div onClick={()=>window.location=`/oneproduct/${item.id}`} className={s.card}>
             <div className={s.card_img}>
-                <img src={`${url}/api/getimage?url=`+item.images.rows[0].meta.downloadHref} alt="" />
+                <img src={item.images?.rows[0]?.meta?.downloadHref?`${url}/api/getimage?url=`+item.images?.rows[0]?.meta?.downloadHref : "https://thumb.ac-illust.com/b1/b170870007dfa419295d949814474ab2_t.jpeg" } alt="" />
             </div>
             <h5>{item.pathName.slice(0,20)}</h5>
             <p>{item.name.slice(0,40)}{item.name.length>30?('...'):("")}</p>

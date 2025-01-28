@@ -73,16 +73,19 @@ export default function Navbar() {
 
 
     var [product,setProduct]=useState([])
-function getProduct() {
-    axios.get(`${url}/api/product?limit=10000`).then(res=>{
-setProduct(res.data)
-    })
+function getProduct(e) {
+    if(e.target.value.length>0){
+         axios.get(`${url}/api/search?query=${e.target.value}`).then(res=>{
+setProduct(res.data.rows)
+    })  
+    }
+ 
 }
 
     useEffect(() => {
         getCompany()
         getCategory()
-        getProduct()
+     
     }, [])
     return (
         <div className={s.navbar_body}>
@@ -151,7 +154,7 @@ setProduct(res.data)
                 <div className={s.navbar__filter__search}>
                     <CiSearch className={s.search__icons} />
                     <input onKeyUp={(e) => {
-                        setSearchKey(e.target.value)
+                        getProduct(e)
                         if ((e.target.value).length > 0) {
                             document.querySelector('#searchresult').style = "display:block"
                         } else {

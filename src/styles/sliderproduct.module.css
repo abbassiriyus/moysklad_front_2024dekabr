@@ -84,6 +84,14 @@ margin-bottom: 20px;
 .top_slider .header_carousel .card h5{
     text-align: left;
     margin-top: 5px;
+    height: 12px;
+}
+@media(max-width:430px){
+    .top_slider .header_carousel .card h5{
+        text-align: left;
+        margin-top: 5px;
+        height: 18px;
+    }
 }
  
 .top_slider .header_carousel .card p{

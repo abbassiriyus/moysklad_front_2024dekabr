@@ -2,9 +2,19 @@ import React from 'react';
 import Navbar1 from '../components/NavbarPage';
 import Footer1 from '../components/footer';
 import s from "../styles/storage.module.css"
+import Head from 'next/head';
 export default function page() {
   return (
     <div>
+          <Head>
+        <title>Tariximiz - RCE.uz</title>
+        <meta name="description" content="RCE.uz - Elektronika do'koni tariximiz. Bizning rivojlanishimiz va yutuqlarimiz." />
+        <meta name="keywords" content="tariximiz, RCE.uz, elektronika do'koni, rivojlanish" />
+        <meta property="og:title" content="Tariximiz - RCE.uz" />
+        <meta property="og:description" content="Bizning rivojlanishimiz va yutuqlarimiz." />
+        <meta property="og:url" content="https://rce.uz/storage" />
+        <link rel="canonical" href="https://rce.uz/storage" />
+      </Head>
         <div style={{padding:"20px"}}>
         <Navbar1/>
 <h1 className={s.storage_title}>Kompaniya tarixi</h1>

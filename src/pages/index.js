@@ -22,6 +22,7 @@ import { Navigation, Pagination, Mousewheel, Keyboard } from 'swiper/modules';
 import Image from 'next/image';
 import axios from 'axios';
 import url from '../host/host';
+import Head from 'next/head';
 
 export default function page() {
   var [indexkey, setIndexKey] = useState(0)
@@ -34,36 +35,9 @@ var [mashxur,setMashxur]=useState([])
 var [product,setProduct]=useState([])
 var [link,setLink]=useState("")
 var [topTovar_1,setTopTovar_1]=useState('')
-function getTopTovar() {
-  axios.get(`${url}/api/top_tovar`).then(res=>{
-    if(res.data.length>0){
-      setTopTovar_1(res.data[0].category_id)
-      axios.get(`${url}/api/category/product/${res.data[0].category_id}?limit=10`).then(res2=>{
-setTopTovar(res2.data)
-axios.get(`${url}/api/document`).then(res3=>{
-if(res3.data.length>0){  
-  setLink(res3.data[0].image)
-}
 
-}).catch(err=>{
-
-})
-
-      })
-    }
-  })
-}
 var [mashhur_1,setMashxur_1]=useState('')
-function getMashxur() {
-  axios.get(`${url}/api/best_seller`).then(res=>{
-    if(res.data.length>0){
-      setMashxur_1(res.data[0].category_id)
-      axios.get(`${url}/api/category/product/${res.data[0].category_id}?limit=10`).then(res2=>{
-setMashxur(res2.data)
-      })
-    }
-  })
-}
+
 function getContent() {
   axios.get(`${url}/api/carousel`).then(res=>{
     axios.get(`${url}/api/homiy`).then(res1=>{
@@ -82,18 +56,55 @@ function getHeaderData() {
 })
 }
 useEffect(()=>{
-  axios.get(`${url}/api/product?limit=100`).then(Res=>{
+  axios.get(`${url}/api/product?limit=10`).then(Res=>{
     setProduct(Res.data);
     getContent();
+    axios.get(`${url}/api/best_seller`).then(res1=>{
+      if(res1.data.length>0){
+        setMashxur_1(res1.data[0].category_id)
+        axios.get(`${url}/api/category/product/${res1.data[0].category_id}?limit=10`).then(res12=>{
+  setMashxur(res12.data)
+  axios.get(`${url}/api/top_tovar`).then(res2=>{
+    if(res2.data.length>0){
+      setTopTovar_1(res2.data[0].category_id)
+      axios.get(`${url}/api/category/product/${res2.data[0].category_id}?limit=10`).then(res22=>{
+setTopTovar(res22.data)
+axios.get(`${url}/api/document`).then(res23=>{
+if(res23.data.length>0){  
+  setLink(res23.data[0].image)  
+}
+
+}).catch(err=>{
+
+})
+
+      })
+    }
+  })
+
+        })
+      }
+    })
   })
  
   getHeaderData();
-  getTopTovar();
-  getMashxur();
+ 
 },[])
 
   return (
     <div >
+            <Head>
+        <title>RCE.uz - Elektronika do'koni</title>
+        <meta name="description" content="RCE.uz - Eng so'nggi elektronika mahsulotlarini, telefonlar, kompyuterlar, televizorlar va boshqa ko'plab mahsulotlarni eng yaxshi narxlarda sotib oling." />
+        <meta name="keywords" content="elektronika, telefonlar, kompyuterlar, televizorlar, RCE.uz, onlayn do'kon, elektronika sotuv" />
+        <meta property="og:title" content="RCE.uz - Elektronika do'koni" />
+        <meta property="og:description" content="Eng so'nggi elektronika mahsulotlarini eng yaxshi narxlarda sotib oling." />
+        <meta property="og:url" content="https://rce.uz" />
+        <meta property="og:image" content="URL_TO_YOUR_IMAGE" />
+        <link rel="canonical" href="https://rce.uz" />
+      </Head>
+
+
       <div style={{padding:"0 20px"}}>
       <Navbar />
       <div className={s.carousel_panel}>
@@ -194,11 +205,11 @@ useEffect(()=>{
       h1:'Eng mashhur mahsulotlar',
       p:'Bizning mijozlarimiz tanlovi'
       }}/>
-      <Sliderproduct  mapdata={topTovar} id={mashhur_1} data={{title:'Eng yaxshi takliflar',
+      <Sliderproduct  mapdata={mashxur} id={mashhur_1} data={{title:'Eng yaxshi takliflar',
       h1:'Foydali taklif',
       p:'Ajoyib takliflar va maxsus narxlar haqida bilib oling. Faqat shu oy!'
       }}/>
-      <Sliderproduct  mapdata={mashxur} id={topTovar_1} data={{title:'Mashhur',
+      <Sliderproduct  mapdata={topTovar} id={topTovar_1} data={{title:'Mashhur',
       h1:"Birinchi bo'lib xarid qiling",
       p:"Yuqori talabga ega bo'lgan yangi mahsulotlar"
       }}/>
