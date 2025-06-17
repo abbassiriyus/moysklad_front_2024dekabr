@@ -41,8 +41,9 @@ export default function footer() {
   <p>Radio City Farg’ona</p>
 </div>
 <div className={`${s.footer__item}  ${s.large}` }>
- <div> <Image src={playmarket} alt="" /> <br />
- <Image src={app__store} alt="" /></div>
+ {/* <div>
+  <Image src={playmarket} alt="" /> <br />
+ <Image src={app__store} alt="" /></div> */}
 <div className={s.set__image}>
 <Image src={set_1} alt="" />
 <Image src={set_2} alt="" />
