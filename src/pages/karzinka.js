@@ -218,7 +218,7 @@ function sotibOlinganlar() {
     calkulator()
   }
   const sendMessage = async (chatId, message) => {
-    const botToken = '7598395550:AAFGsDx1WnlZr6WNIrFbDMfkwzsVeMcGtko'; // o'z tokeningizni kiriting
+    const botToken = '8202859471:AAH9OP2VhWF94q0t9jVvD9UTX4jgGlXqdqE'; // o'z tokeningizni kiriting
     var url=`https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${message}`
     // const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
@@ -230,24 +230,30 @@ function sotibOlinganlar() {
     }
 };
 function sotibOlish() {
-  var input_1 = document.querySelectorAll('.one_input')
-var message=`Yangi buyurtma`+` %0A `
-message+="Buyurtmachi:"+document.querySelectorAll('#checkout_1 input')[0].value+`%0A`
-message+="Nomeri:"+document.querySelectorAll('#checkout_1 input')[1].value+`%0A`+`%0A`
+  var input_1 = document.querySelectorAll('.one_input');
+  var message = `🛒 Yangi buyurtma! %0A%0A`;
 
-for (let i = 0; i < input_1.length; i++) {
- if (input_1[i].checked) {
-  message=message+`nomi:`+data[i].title+` %0A `
-  message+=`narxi:`+data[i].price+` so'm`+` %0A`
-  message+=`soni:`+data[i].count+` ta`+` %0A`+` %0A`
- }
-  
+  message += `👤 Buyurtmachi: ${document.querySelectorAll('#checkout_1 input')[0].value} %0A`;
+  message += `📞 Telefon: ${document.querySelectorAll('#checkout_1 input')[1].value} %0A%0A`;
+
+  message += `📦 Buyurtma tafsilotlari: %0A`;
+
+  for (let i = 0; i < input_1.length; i++) {
+    if (input_1[i].checked) {
+      message += `━━━━━━━━━━━━━━━%0A`;
+      message += `📌 Nomi: ${data[i].title} %0A`;
+      message += `💰 Narxi: ${data[i].price} so'm %0A`;
+      message += `🔢 Soni: ${data[i].count} ta %0A`;
+    }
+  }
+
+  message += `━━━━━━━━━━━━━━━%0A`;
+  message += `💵 Jami summa: ${allSum} so'm %0A`;
+
+  sendMessage(-1002912781012, message);
+  deleteAll();
 }
 
-message+=`Jami:`+allSum+` so'm`
-sendMessage(-1002481822428,message)
-deleteAll()
-}
 
   useEffect(() => {
     let mapdata

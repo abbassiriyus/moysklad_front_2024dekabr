@@ -11,20 +11,91 @@ import card_image5 from "../image/Component 10 (4).png";
 import card_image6 from "../image/Component 10 (5).png";
 import Head from 'next/head';
 
+// JSON-LD tuzilgan ma'lumotlar
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Radio City",
+  "description": "Radio City - Buxorodagi eng ishonchli elektronika do'koni. 28 yillik tajriba bilan smartfonlar, noutbuklar va gadjetlar. Afrosiyob Ko'chasi 412, Buxoro.",
+  "url": "https://rce.uz/bizhaqimizada",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Afrosiyob Ko'chasi 412",
+    "addressLocality": "Buxoro",
+    "addressRegion": "Buxoro viloyati",
+    "postalCode": "200100",
+    "addressCountry": "UZ"
+  },
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+998973048888",
+      "contactType": "Customer Service",
+      "areaServed": "UZ",
+      "availableLanguage": ["Uzbek", "Russian"]
+    },
+    {
+      "@type": "ContactPoint",
+      "telephone": "+998945452266",
+      "contactType": "Customer Service",
+      "areaServed": "UZ"
+    }
+  ],
+  "email": "info@rce.uz",
+  "sameAs": [
+    "https://t.me/radiocityuz",
+    "https://x.com/radiocityuz",
+    "https://instagram.com/radiocityuz"
+  ],
+  "foundingDate": "1998-01-01",
+  "numberOfEmployees": "100",
+  "logo": "https://api.rce.uz/logo.png"
+};
+
+// Metadata obyekti
+export const metadata = {
+  title: "Biz haqimizda - Radio City | Buxoro Elektronika Do'koni",
+  description: "Radio City - 28 yillik tajribaga ega Buxorodagi elektronika do'koni. Smartfonlar, noutbuklar va gadjetlar. Afrosiyob Ko'chasi 412, Buxoro. ☎️ +998973048888",
+  keywords: ["Radio City", "elektronika do'koni", "Buxoro smartfonlar", "Afrosiyob Ko'chasi 412", "O'zbekiston gadjetlar", "onlayn xarid"],
+  openGraph: {
+    title: "Biz haqimizda - Radio City",
+    description: "Radio City - Buxorodagi eng ishonchli elektronika do'koni. 28 yil sifatli xizmat! Buyurtma bering: rce.uz",
+    url: "https://rce.uz/bizhaqimizada",
+    type: "website",
+    images: [
+      {
+        url: "https://api.rce.uz/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Radio City do'koni Afrosiyob Ko'chasi 412, Buxoro"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Radio City - Buxoro Elektronika Do'koni",
+    description: "28 yillik tajriba! Smartfonlar, noutbuklar va gadjetlar. Afrosiyob Ko'chasi 412, Buxoro. rce.uz",
+    images: ["https://api.rce.uz/logo.png"]
+  },
+  alternates: {
+    canonical: "https://rce.uz/bizhaqimizada"
+  }
+};
 
 
 export default function page() {
 
     return (
     <div className={s.about}>
-            <Head>
-        <title>Biz haqimizda - RCE.uz</title>
-        <meta name="description" content="RCE.uz - Elektronika do'koni haqida ma'lumot. Bizning maqsadimiz sifatli mahsulotlarni taqdim etish." />
-        <meta name="keywords" content="biz haqimizda, RCE.uz, elektronika do'koni" />
-        <meta property="og:title" content="Biz haqimizda - RCE.uz" />
-        <meta property="og:description" content="Bizning maqsadimiz sifatli mahsulotlarni taqdim etish." />
-        <meta property="og:url" content="https://rce.uz/bizhaqimizada" />
-        <link rel="canonical" href="https://rce.uz/bizhaqimizada" />
+    <Head>
+        <meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE" />
+        <meta name="geo.region" content="UZ-Buxoro" />
+        <meta name="geo.placename" content="Buxoro, O'zbekiston" />
+        <meta name="robots" content="index, follow" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </Head>
 
 

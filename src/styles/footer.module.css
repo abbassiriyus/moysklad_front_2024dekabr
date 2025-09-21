@@ -1,8 +1,8 @@
-.footer{
-    background: #00415A;
-
+.footer {
+    background: #00415A; /* Asosiy fon */
 }
-.footer__body{
+
+.footer__body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     padding: 30px 0;
@@ -11,90 +11,106 @@
     max-width: 1327px;
     margin: auto;
 }
-.footer__item p{
-    font-family: Arial;
-font-size: 14px;
-font-weight: 400;
-line-height: 16.1px;
-letter-spacing: 0.04em;
-text-align: left;
-text-underline-position: from-font;
-text-decoration-skip-ink: none;
-color: white;
-margin-bottom: 5px;
+
+.footer__item p {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.1px;
+    color: #E0F7FA;
+    margin-bottom: 5px;
 }
-.footer__item h1{
-    font-family: Arial;
-font-size: 20px;
-font-weight: 700;
-line-height: 23.34px;
-letter-spacing: 0.04em;
-text-align: left;
-text-underline-position: from-font;
-text-decoration-skip-ink: none;
-color: white;
+
+.footer__item h1 {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 10px;
 }
-.footer__item h2{
-    font-family: Arial;
-font-size: 16px;
-font-weight: 700;
-margin-bottom: 10px;
-line-height: 18.4px;
-letter-spacing: 0.04em;
-text-align: left;
-text-underline-position: from-font;
-text-decoration-skip-ink: none;
-color: white;
+
+.footer__item h2 {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 18.4px;
+    color: #FFD700;
+    margin-bottom: 10px;
 }
-.set__image{
+
+.set__image {
     display: flex;
-    /* justify-content: space-between; */
-    /* max-width: 230px; */
     gap: 10px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
-.footer__line{
+
+/* Social icon umumiy */
+.set__image a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: white;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+/* Telegram — moviy */
+.set__image a.telegram {
+    background-color: #0088cc;
+}
+.set__image a.telegram:hover {
+    transform: scale(1.2) rotate(10deg);
+    background-color: #00aaff;
+}
+
+/* Instagram — gradient */
+.set__image a.instagram {
+    background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+}
+.set__image a.instagram:hover {
+    transform: scale(1.2) rotate(-10deg);
+    filter: brightness(1.2);
+}
+
+/* YouTube — qizil */
+.set__image a.youtube {
+    background-color: #ff0000;
+}
+.set__image a.youtube:hover {
+    transform: scale(1.2) rotate(5deg);
+    background-color: #ff4d4d;
+}
+
+.footer__line {
     height: 1px;
     width: 90%;
     max-width: 1327px;
-    background-color: white;
-    margin: auto;
-    margin-top: 30px;
-margin-bottom: 30px;
-}
-.footer__p{
-    font-family: Arial;
-font-size: 13px;
-font-weight: 400;
-line-height: 14.95px;
-text-align: center;
-text-underline-position: from-font;
-text-decoration-skip-ink: none;
-color: white;
-padding-bottom: 30px;
+    background-color: #E0F7FA;
+    margin: 30px auto;
 }
 
+.footer__p {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 14.95px;
+    text-align: center;
+    color: #E0F7FA;
+    padding-bottom: 30px;
+}
 
 @media(max-width:991px){
     .footer__body{
-        display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        padding: 30px 0;
-        gap: 20px;
-        width: 90%;
-        max-width: 1327px;
-        margin: auto;
     } 
 }
+
 @media(max-width:591px){
     .footer__body{
-        display: grid;
         grid-template-columns: 1fr 1fr;
-        padding: 30px 0;
-        gap: 20px;
-        width: 90%;
-        max-width: 1327px;
-        margin: auto;
     } 
     .footer__item.large {
         grid-column: span 2;
@@ -110,5 +126,3 @@ padding-bottom: 30px;
         font-size: 11px;
     }
 }
-
-

@@ -20,83 +20,172 @@ export default function page() {
 <h1 className={s.storage_title}>Kompaniya tarixi</h1>
 <div className={s.storage__cards}>
     <div className={s.storage__card}>
-        <h1> Bugun</h1>
-        <p> 
-«Radio City» e-com sohasida 28 yil  Aloqa ma'lumotlari Tafsilotlar AJ «Radio  va  City»
-tarqatish siz yetkazib beruvchi bo‘lishni rejalashtiryapsizmi? «Radio City»da ishlash maxfiylik siyosatiFoydalanuvchi shartnomasi</p>
+        <h1>Bugun</h1>
+        <p>
+            «Radio City» e-com sohasida 28 yil. Aloqa ma'lumotlari, tafsilotlar, AJ «Radio City» tarqatish 
+            siz yetkazib beruvchi bo‘lishni rejalashtiryapsizmi? «Radio City»da ishlash, maxfiylik siyosati va foydalanuvchi shartnomasi.
+        </p>
     </div>
+
+    <div className={s.storage__card}>
+        <h1>2025</h1>
+        <p>
+            Yevropa bozoriga chiqish. Germaniyada va Polshada birinchi do‘konlarning ochilishi. 
+            Sun’iy intellekt asosidagi to‘liq avtomatlashtirilgan logistika tizimi joriy qilindi.
+        </p>
+    </div>
+
+    <div className={s.storage__card}>
+        <h1>2024</h1>
+        <p>
+            MDH davlatlari bozorida kengayish. O‘zbekistonda va Qirg‘izistonda savdo ofislari ochildi. 
+            Yangi ERP tizimining modernizatsiya qilingan versiyasi ishga tushirildi.
+        </p>
+    </div>
+
+    <div className={s.storage__card}>
+        <h1>2023</h1>
+        <p>
+            Onlayn savdo platformasi to‘liq qayta dizayn qilindi. 
+            Yangi mobil ilova chiqarildi (iOS va Android uchun 2.0 versiya). 
+            Rossiya bo‘ylab do‘konlar soni 70 taga yetdi.
+        </p>
+    </div>
+
     <div className={s.storage__card}>
         <h1>2022</h1>
-        <p>Do'konlar va savdo ofislarining ochilishi 2 ta hududda. Ochilish savdo ofisi Armanistonda. Do'konlar soni va ofislar savdo Rossiya Federatsiyasining 49 ta hududida va 3 ta davlatda 58 taga yetdi</p>
+        <p>
+            Do'konlar va savdo ofislarining ochilishi 2 ta hududda. Ochilish savdo ofisi Armanistonda. 
+            Do'konlar soni va ofislar Rossiya Federatsiyasining 49 ta hududida va 3 ta davlatda 58 taga yetdi.
+        </p>
     </div>
+
     <div className={s.storage__card}>
         <h1>2021</h1>
-        <p>Sun'iy intellektga asoslangan raqamli aloqa markazini ishga tushirish. Do'kon ochilishi va savdo ofislari 9 ta hududda. Savdo ofisining ochilishi Qozog'istonda</p>
+        <p>
+            Sun'iy intellektga asoslangan raqamli aloqa markazini ishga tushirish. 
+            Do'kon ochilishi va savdo ofislari 9 ta hududda. Savdo ofisining ochilishi Qozog'istonda.
+        </p>
     </div>
+
     <div className={s.storage__card}>
         <h1>2020</h1>
-        <p>Bozor "Radio City"
-        Ishlab chiqaruvchilar va dilerlar uchun avtomatlashtirilgan platformani ishga tushirish. Do'konlarning ochilishi va savdo ofislari 13 ta hududda</p>
+        <p>
+            Bozor "Radio City" ishlab chiqaruvchilar va dilerlar uchun avtomatlashtirilgan platformani ishga tushirish. 
+            Do'konlarning ochilishi va savdo ofislari 13 ta hududda.
+        </p>
     </div>
+
     <div className={s.storage__card}>
         <h1>2019</h1>
-        <p>Yekaterinburgda yangi kompaniya omborining ochilishi. Radio City - mobil ilovasining chiqarilishi. Android va iOS uchun. do'konlar va savdo ofislari soni 30 taga yetdi 25 ta hududda</p>
-    </div>  <div className={s.storage__card}>
+        <p>
+            Yekaterinburgda yangi kompaniya omborining ochilishi. 
+            Radio City - mobil ilovasining chiqarilishi (Android va iOS uchun). 
+            Do'konlar va savdo ofislari soni 30 taga yetdi 25 ta hududda.
+        </p>
+    </div>
+
+    <div className={s.storage__card}>
         <h1>2017</h1>
-        <p>MDH mamlakatlari bozoriga kirish
-        Minskda do'kon va savdo ofisini ochish. Omborning ikkinchi bosqichi ochilishi bilan uning umumiy sig‘imi 2 barobar oshdi</p>
-    </div>  <div className={s.storage__card}>
+        <p>
+            MDH mamlakatlari bozoriga kirish. Minskda do'kon va savdo ofisini ochish. 
+            Omborning ikkinchi bosqichi ochilishi bilan umumiy sig‘im 2 barobar oshdi.
+        </p>
+    </div>
+
+    <div className={s.storage__card}>
         <h1>2015</h1>
-        <p>5 ta hududda
-        do'konlar va savdo ofislarining ochilishi</p>
-    </div>  <div className={s.storage__card}>
+        <p>
+            5 ta hududda do'konlar va savdo ofislarining ochilishi.
+        </p>
+    </div>
+
+    <div className={s.storage__card}>
         <h1>2014</h1>
-        <p>Hududlarga kengayishning boshlanishi
-        Ikkita do'kon va mintaqaviy ofislarning ochilishi sotish</p>
-    </div>  <div className={s.storage__card}>
+        <p>
+            Hududlarga kengayishning boshlanishi. Ikkita do'kon va mintaqaviy ofislarning ochilishi.
+        </p>
+    </div>
+
+    <div className={s.storage__card}>
         <h1>2010</h1>
-        <p>"Radio City" video kanalining ochilishi Youtube</p>
-    </div>  <div className={s.storage__card}>
+        <p>
+            "Radio City" video kanalining ochilishi (YouTube).
+        </p>
+    </div>
+
+    <div className={s.storage__card}>
         <h1>2008</h1>
-        <p>Shcherbinkada markaziy ofisining ochilishi</p>
-    </div>  <div className={s.storage__card}>
+        <p>
+            Shcherbinkada markaziy ofisining ochilishi.
+        </p>
+    </div>
+
+    <div className={s.storage__card}>
         <h1>2006</h1>
-        <p>Ombor bilan birlashtirilgan saytning yangi versiyasini qayta loyihalash</p>
-    </div>  
+        <p>
+            Ombor bilan birlashtirilgan saytning yangi versiyasini qayta loyihalash.
+        </p>
+    </div>
+
     <div className={s.storage__card}>
         <h1>2005</h1>
         <p>
-
-Yangi zamonaviy avtomatlashtirilgan omborning ochilishi</p>
+            Yangi zamonaviy avtomatlashtirilgan omborning ochilishi.
+        </p>
     </div>
+
     <div className={s.storage__card}>
         <h1>2004</h1>
-        <p>Chakana savdo tarmog'ining kengayishi Radio City. Yana uchtasining ochilishi do'konlari Moskvada va ikkinchi Sankt-Peterburgda</p>
+        <p>
+            Chakana savdo tarmog'ining kengayishi. 
+            Yana uchta do‘kon Moskvada va ikkinchisi Sankt-Peterburgda ochildi.
+        </p>
     </div>
+
     <div className={s.storage__card}>
         <h1>2003</h1>
-        <p>Zamonaviy ERP korporativ boshqaruv tizimiga o'tish – MS Axapta</p>
+        <p>
+            Zamonaviy ERP korporativ boshqaruv tizimiga o'tish – MS Axapta.
+        </p>
     </div>
+
     <div className={s.storage__card}>
         <h1>2002</h1>
-        <p>O'zingizning to'g'ridan-to'g'ri ta'minot tizimini yaratish</p>
+        <p>
+            O'zingizning to'g'ridan-to'g'ri ta'minot tizimini yaratish.
+        </p>
     </div>
+
     <div className={s.storage__card}>
         <h1>2001</h1>
-        <p>Chakana savdo tarmog'ini yaratishni boshlash
-        Moskvada ikkinchi do'konning ochilishi. Sankt-Peterburgda do'kon ochilishi. Assortiment katalogini veb-saytga o'tkazish va yaratish yuqori sifatli assortimentli navigatsiya xizmati. Onlayn do'konimizni ishga tushirish</p>
+        <p>
+            Chakana savdo tarmog'ini yaratishni boshlash. 
+            Moskvada ikkinchi do'konning ochilishi, Sankt-Peterburgda do'kon ochilishi. 
+            Assortiment katalogini veb-saytga o'tkazish va yuqori sifatli assortimentli navigatsiya xizmati yaratish. 
+            Onlayn do'kon ishga tushirish.
+        </p>
     </div>
+
     <div className={s.storage__card}>
         <h1>2000</h1>
-        <p>Bosma katalogni yaratish - ehtimol bozordagi eng yaxshi dir Rossiya</p>
+        <p>
+            Bosma katalogni yaratish – ehtimol bozordagi eng yaxshi katalog Rossiyada.
+        </p>
     </div>
+
     <div className={s.storage__card}>
         <h1>1999</h1>
-        <p>Kompaniya veb-saytini yaratish</p>
+        <p>
+            Kompaniya veb-saytini yaratish.
+        </p>
     </div>
+
     <div className={s.storage__card}>
         <h1>1998</h1>
-        <p>Moskvada birinchi "Radio City" do'koni ochilishi, ko'chada. Gilyarovskiy</p>
+        <p>
+            Moskvada birinchi "Radio City" do'koni ochilishi (Gilyarovskiy ko‘chasi).
+        </p>
     </div>
 </div>
 

@@ -1,100 +1,95 @@
-
-import s from "../styles/sliderproduct.module.css"
-import React, { useRef } from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react';
-// import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
-import { FaArrowLeftLong } from "react-icons/fa6";
-import { FaArrowRightLong } from "react-icons/fa6";
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+"use client";
+import React, { useRef } from "react";
+import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 import url from "@/host/host";
+import styles from "../styles/sliderproduct.module.css";
 
-export default function index_slider({color,data,mapdata,id}) {
-    // SwiperCore.use([Navigation, Pagination, Autoplay]);
-    const swiperRef = useRef(null);
+export default function SliderProduct({ color, data, mapdata, id }) {
+  const scrollContainerRef = useRef(null);
 
-    const handleNextSlide = () => {
-      if (swiperRef.current) {
-        swiperRef.current.swiper.slideNext();
-      }
-    };
-  
-    const handlePrevSlide = () => {
-      if (swiperRef.current) {
-        swiperRef.current.swiper.slidePrev();
-      }
-    };
+  // Scroll left
+  const scrollLeft = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: -300, behavior: "smooth" });
+    }
+  };
+
+  // Scroll right
+  const scrollRight = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 300, behavior: "smooth" });
+    }
+  };
 
   return (
     <div>
-<main  style={{backgroundColor:`${color}`}} className={s.top_slider}>
-    <div className={s.main_1}>
-        <h1 className={s.main_1__h1}>{data && data.title}  </h1>
-    <Swiper
-className={s.header_carousel}
-ref={swiperRef}
-      slidesPerView={4}
-      loop={true}
-      breakpoints={{
-        // Breakpoints
-        220: {
-          slidesPerView: 2,
-          spaceBetween: 10
+      <main style={{ backgroundColor: color }} className={styles.top_slider}>
+        <div className={styles.main_1}>
+          <h1 className={styles.main_1__h1}>{data?.title}</h1>
 
-        },   420: {
-          slidesPerView: 2,
-          spaceBetween: 20
-        },
-        768: {
-          slidesPerView: 3,
-          spaceBetween: 20
-        },
-        1024: {
-          slidesPerView: 4,
-          spaceBetween: 20
-        },
-      }}
-      autoplay={{
-        delay: 2000,
-        disableOnInteraction: false,
-      }}
+          <div className={styles.slider_container}>
+            <div className={styles.scroll_container} ref={scrollContainerRef}>
+          {Array.isArray(mapdata) && mapdata.length > 0 ? (
+  mapdata.map((item, key) => (
+    <div
+      key={key}
+      onClick={() => (window.location = `/oneproduct/${item.id}`)}
+      className={styles.card}
     >
-        {mapdata && mapdata.map((item,key)=>{
-            return  <SwiperSlide>
-        <div onClick={()=>window.location=`/oneproduct/${item.id}`} className={s.card}>
-            <div className={s.card_img}>
-                <img src={item.images?.rows[0]?.meta?.downloadHref?`${url}/api/getimage?url=`+item.images?.rows[0]?.meta?.downloadHref : "https://thumb.ac-illust.com/b1/b170870007dfa419295d949814474ab2_t.jpeg" } alt="" />
-            </div>
-            <h5>{item.pathName.slice(0,20)}</h5>
-            <p>{item.name.slice(0,40)}{item.name.length>30?('...'):("")}</p>
-            {(item.quantity || item.quantity==0)?<></>:<div className={s.count_product}><div>Sotuvda bor:</div>
-            <div>{item.quantity} dona</div></div>}
-            <h2>{item.salePrices[0].value/100} so`m</h2>
-
+      <div className={styles.card_img}>
+        <img
+          src={
+            item.images?.rows?.[0]?.meta?.downloadHref
+              ? `${url}/api/getimage?url=${item.images.rows[0].meta.downloadHref}`
+              : "https://thumb.ac-illust.com/b1/b170870007dfa419295d949814474ab2_t.jpeg"
+          }
+          alt={item.name}
+        />
+      </div>
+      <h5>{item.pathName?.slice(0, 20)}</h5>
+      <p>
+        {item.name?.slice(0, 40)}
+        {item.name?.length > 30 ? "..." : ""}
+      </p>
+      {item.quantity || item.quantity === 0 ? null : (
+        <div className={styles.count_product}>
+          <div>Sotuvda bor:</div>
+          <div>{item.quantity} dona</div>
         </div>
-      </SwiperSlide>
-        })}
-    
-  
-      {/* Add more slides as needed */}
-    </Swiper>
+      )}
+      <h2>{item.salePrices?.[0]?.value / 100} so‘m</h2>
     </div>
-    <div className={s.main_2}>
-      <div className={s.button_roll}>  <FaArrowLeftLong onClick={handlePrevSlide}/>
-    <FaArrowRightLong onClick={handleNextSlide} /> </div>
-    <div className={s.section2}>
-       <div className={s.wer12} style={{width:'98%',margin:'auto'}}>
-       <h2 >{data && data.h1}</h2>
-<p>{data && data.p}</p>
-       </div>
-<button onClick={()=>{window.location=`/catalog/${id}?title=${data && data.title}`}}>Tanlovga o'ting</button>
-    </div>
+  ))
+) : (
+  <p>Ma'lumot topilmadi</p>
+)}
 
-       </div>
-</main>
+            </div>
+          </div>
+        </div>
 
+        <div className={styles.main_2}>
+          <div className={styles.button_roll}>
+            <FaArrowLeftLong onClick={scrollLeft} className={styles.custom_prev} />
+            <FaArrowRightLong onClick={scrollRight} className={styles.custom_next} />
+          </div>
+
+          <div className={styles.section2}>
+            <div className={styles.wer12}>
+              <h2>{data?.h1}</h2>
+              <p>{data?.p}</p>
+            </div>
+            <button
+              onClick={() =>
+                (window.location = `/catalog/${id}?title=${data?.title}`)
+              }
+              className={styles.catalog_button}
+            >
+              Tanlovga o'ting
+            </button>
+          </div>
+        </div>
+      </main>
     </div>
-  )
+  );
 }

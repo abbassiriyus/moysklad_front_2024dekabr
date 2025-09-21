@@ -368,18 +368,23 @@ transition: 1s;
 }
 .katalogPage__category__li p{
     font-family: Arial;
-font-size: 14px;
-font-weight: 400;
-line-height: 16.1px;
-letter-spacing: 0.1em;
-text-align: center;
-text-underline-position: from-font;
-text-decoration-skip-ink: none;
-
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16.1px;
+    letter-spacing: 0.1em;
+    text-align: center;
+    text-underline-position: from-font;
+    -webkit-text-decoration-skip-ink: none;
+    text-decoration-skip-ink: none;
+    overflow: hidden; /* Yangi: to'liq oqishni oldini olish */
+    text-overflow: ellipsis; /* Yangi: uzun matn uchun ... ko'rsatish */
+    white-space: nowrap; /* Eski: nowrap saqlash, lekin ellipsis bilan birgalikda */
+    max-width: 80%; /* Yangi: matn kengligini cheklash */
 }
+
 .katalogPage__category{
     display: grid;
-    grid-template-columns: 250px auto;
+    grid-template-columns: 300px auto;
     background-color: white;
     width: 100%;
     z-index: 111;
@@ -413,7 +418,7 @@ text-decoration-skip-ink: none;
 }
 .katalogPage__category__cards p{
     font-family: Arial;
-    font-size: 14px;
+    font-size: 12px;
     cursor: pointer;
     margin-bottom: 5px;
     font-weight: 400;
@@ -422,6 +427,10 @@ text-decoration-skip-ink: none;
     letter-spacing: 0.1em;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;    
+    overflow: hidden; /* Yangi: desktopda ham ellipsis qo'shish */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
 }
 .katalogPage__category__cards p:hover{
     scale: 1.01;
@@ -465,8 +474,19 @@ line-height: 13.8px;
 letter-spacing: 0.1em;
 text-underline-position: from-font;
 text-decoration-skip-ink: none;
-
+overflow: hidden; /* Yangi: mobil uchun ellipsis */
+text-overflow: ellipsis;
+white-space: nowrap;
+max-width: 90%; /* Yangi: mobil matnni kengroq qilish, lekin cheklash */
+cursor: pointer;
+transition: 0.3s ease; /* Professional animatsiya qo'shish */
 }
+
+.accordioncontent p:hover {
+    color: #E91F25; /* Hoverda rang o'zgartirish - professional ko'rinish */
+    scale: 1.02;
+}
+
 @media(max-width:700px){
     .katalogPage__category__ul{
         display: none;
@@ -476,11 +496,52 @@ text-decoration-skip-ink: none;
     }
     .katalogPage__category{
         display: grid;
-        grid-template-columns:  auto;
+        grid-template-columns: auto; /* Avvalgi: auto; saqlash */
         background-color: white;
-        width: 100%;
+        width: 100%; /* To'liq kenglik */
+        padding: 0 10px; /* Yangi: chetlarda padding qo'shish, havoni professional qilish */
+        box-sizing: border-box; /* Padding kenglikka ta'sir qilmasin */
     }
     .accordion{
         display: block;
+        width: 100%; /* To'liq kenglik accordion uchun */
+        max-width: 100vw; /* Ekran kengligidan oshmasin */
+        overflow-x: auto; /* Agar kerak bo'lsa, gorizontal scroll qo'shish (lekin ellipsis bilan birgalikda kamdan-kam) */
+        -webkit-overflow-scrolling: touch; /* iOS da silliq scroll */
+    }
+    .accordionheader {
+        padding: 12px 15px; /* Yangi: mobil paddingni oshirish, professional spacing */
+        font-size: 14px; /* Yangi: sarlavha fontini biroz kattalashtirish */
+        background-color: #f8f9fa; /* Yangi: engil fon rangi, professional ko'rinish */
+        border-bottom: 1px solid #e9ecef; /* Yangi: chegara qo'shish */
+    }
+    .accordioncontent {
+        padding: 10px 15px; /* Yangi: content padding oshirish */
+        max-height: 200px; /* Yangi: maksimal balandlik, scroll bo'lsa */
+        overflow-y: auto; /* Vertikal scroll agar sub-menular ko'p bo'lsa */
+    }
+    .accordioncontent p {
+        font-size: 13px; /* Yangi: mobil fontni biroz oshirish, o'qilishi oson */
+        line-height: 16px; /* Yangi: line-height oshirish */
+        padding: 8px 0; /* Yangi: har bir item uchun padding */
+        border-bottom: 1px solid #f0f0f0; /* Yangi: chegara, professional list ko'rinishi */
+        margin: 0;
+    }
+    .accordioncontent p:last-child {
+        border-bottom: none; /* Oxirgi itemda chegara yo'q */
+    }
+}
+
+@media(max-width:480px) {
+    .accordionheader {
+        font-size: 13px; /* Kichik ekranlarda fontni moslashtirish */
+        padding: 10px 12px;
+    }
+    .accordioncontent p {
+        font-size: 12px;
+        max-width: 95%; /* Kichik ekranlarda yanada kengroq */
+    }
+    .katalogPage__category {
+        padding: 0 5px; /* Kichik ekranlarda kamroq padding */
     }
 }
